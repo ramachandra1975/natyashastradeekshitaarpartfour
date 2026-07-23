@@ -1,0 +1,2000 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Akshara and Nada in the Kritis of Muthuswami Dikshitar</title>
+<style>
+
+/* ============================================================
+   ROOT TOKENS
+   Palette drawn from the palm-leaf manuscript and temple altar:
+   tada-patra tan, iron-gall ink, kumkum vermilion, turmeric gold,
+   and the deep peacock teal of Sri Chakra line-drawings.
+   ============================================================ */
+
+:root {
+  --patra-tan: #E7DCB8;
+  --patra-tan-deep: #DACB9C;
+  --ink: #241C13;
+  --ink-soft: #4A3E2C;
+  --kumkum: #8C1D18;
+  --kumkum-deep: #6E1512;
+  --gold: #9C7A24;
+  --gold-bright: #B8912E;
+  --teal: #1F5C57;
+  --teal-deep: #123F3B;
+  --paper-line: rgba(36, 28, 19, 0.14);
+  --card-bg: #F1E9CE;
+  --shadow-soft: rgba(36, 28, 19, 0.18);
+  --font-display: 'Cinzel', 'Cormorant SC', serif;
+  --font-body: 'Spectral', 'Lora', Georgia, serif;
+  --font-sanskrit: 'Tiro Devanagari Sanskrit', 'Noto Serif Devanagari', serif;
+  --font-mono: 'Overpass Mono', 'Courier New', monospace;
+}
+
+@font-face {
+  font-family: 'Cinzel';
+  src: local('Cinzel');
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--patra-tan);
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      rgba(36, 28, 19, 0.02),
+      rgba(36, 28, 19, 0.02) 1px,
+      transparent 1px,
+      transparent 3px
+    );
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+/* ============================================================
+   LAYOUT SHELL
+   ============================================================ */
+
+.page-shell {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 48px;
+}
+
+.margin-gloss {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--teal-deep);
+  border-left: 2px solid var(--gold);
+  padding-left: 14px;
+  margin: 0 0 18px 0;
+}
+
+/* ============================================================
+   HERO
+   ============================================================ */
+
+.hero {
+  position: relative;
+  padding: 96px 0 64px 0;
+  border-bottom: 3px double var(--gold);
+  text-align: center;
+}
+
+.hero-eyebrow {
+  font-family: var(--font-sanskrit);
+  font-size: 22px;
+  color: var(--kumkum-deep);
+  letter-spacing: 0.04em;
+  margin-bottom: 10px;
+}
+
+.hero-title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 58px;
+  line-height: 1.15;
+  color: var(--ink);
+  margin: 0 0 18px 0;
+  letter-spacing: 0.01em;
+}
+
+.hero-title em {
+  font-style: normal;
+  color: var(--kumkum);
+}
+
+.hero-subtitle {
+  font-family: var(--font-body);
+  font-size: 21px;
+  font-style: italic;
+  color: var(--ink-soft);
+  max-width: 720px;
+  margin: 0 auto 28px auto;
+}
+
+.hero-invocation {
+  display: inline-block;
+  margin-top: 18px;
+  padding: 18px 32px;
+  border-top: 1px solid var(--paper-line);
+  border-bottom: 1px solid var(--paper-line);
+  font-family: var(--font-sanskrit);
+  font-size: 19px;
+  color: var(--teal-deep);
+}
+
+/* ============================================================
+   SRI CHAKRA SIGNATURE MOTIF
+   A static, non-animated nine-ring diagram used throughout as
+   the structural marker of avarana position. It is redrawn per
+   section with the active ring in kumkum and the rest in a
+   muted gold outline, so the mark itself encodes progress
+   through the yantra rather than serving as decoration.
+   ============================================================ */
+
+.chakra-marker {
+  display: block;
+  margin: 0 auto;
+  width: 92px;
+  height: 92px;
+}
+
+.chakra-marker .ring-inactive {
+  fill: none;
+  stroke: var(--gold);
+  stroke-width: 1.1;
+  opacity: 0.55;
+}
+
+.chakra-marker .ring-active {
+  fill: none;
+  stroke: var(--kumkum);
+  stroke-width: 2.1;
+}
+
+.chakra-marker .bindu {
+  fill: var(--kumkum);
+}
+
+/* ============================================================
+   TABLE OF CONTENTS
+   ============================================================ */
+
+.toc {
+  margin: 56px 0;
+  padding: 32px 40px;
+  background: var(--card-bg);
+  border: 1px solid var(--paper-line);
+  border-radius: 2px;
+}
+
+.toc-heading {
+  font-family: var(--font-display);
+  font-size: 20px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--teal-deep);
+  margin: 0 0 20px 0;
+}
+
+.toc-list {
+  columns: 2;
+  column-gap: 48px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.toc-list li {
+  break-inside: avoid;
+  margin-bottom: 12px;
+  font-size: 16px;
+}
+
+.toc-list a {
+  color: var(--ink-soft);
+  text-decoration: none;
+  border-bottom: 1px dotted var(--gold);
+}
+
+.toc-list a:hover {
+  color: var(--kumkum);
+}
+
+.toc-num {
+  font-family: var(--font-mono);
+  color: var(--kumkum);
+  margin-right: 8px;
+}
+
+/* ============================================================
+   SECTION STRUCTURE
+   ============================================================ */
+
+section.chapter {
+  padding: 72px 0;
+  border-bottom: 1px solid var(--paper-line);
+}
+
+section.chapter:last-of-type {
+  border-bottom: none;
+}
+
+.chapter-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 12px;
+}
+
+.chapter-title {
+  font-family: var(--font-display);
+  font-size: 38px;
+  font-weight: 600;
+  color: var(--ink);
+  margin: 0 0 8px 0;
+  line-height: 1.2;
+}
+
+.chapter-title-sanskrit {
+  font-family: var(--font-sanskrit);
+  font-size: 22px;
+  color: var(--kumkum-deep);
+  margin: 0 0 32px 0;
+}
+
+.chapter-lede {
+  font-size: 20px;
+  color: var(--ink-soft);
+  font-style: italic;
+  max-width: 760px;
+  margin: 0 0 36px 0;
+  border-left: 3px solid var(--kumkum);
+  padding-left: 20px;
+}
+
+.chapter-body p {
+  max-width: 780px;
+  margin: 0 0 22px 0;
+}
+
+.chapter-body p.wide {
+  max-width: none;
+}
+
+.chapter-body h3 {
+  font-family: var(--font-display);
+  font-size: 24px;
+  color: var(--teal-deep);
+  margin: 44px 0 16px 0;
+}
+
+.chapter-body h4 {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--kumkum-deep);
+  margin: 28px 0 12px 0;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* ============================================================
+   DIVIDER
+   ============================================================ */
+
+.divider-yantra {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  margin: 48px 0;
+}
+
+.divider-yantra .line {
+  height: 1px;
+  width: 120px;
+  background: var(--gold);
+}
+
+.divider-yantra .glyph {
+  font-family: var(--font-sanskrit);
+  font-size: 20px;
+  color: var(--kumkum);
+}
+
+/* ============================================================
+   CASE STUDY BOX
+   ============================================================ */
+
+.case-study {
+  background: var(--card-bg);
+  border: 1px solid var(--gold);
+  border-left: 6px solid var(--kumkum);
+  border-radius: 2px;
+  padding: 28px 32px;
+  margin: 32px 0;
+  box-shadow: 0 2px 10px var(--shadow-soft);
+}
+
+.case-study-label {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--kumkum);
+  margin-bottom: 10px;
+}
+
+.case-study-title {
+  font-family: var(--font-display);
+  font-size: 22px;
+  color: var(--ink);
+  margin: 0 0 6px 0;
+}
+
+.case-study-meta {
+  font-size: 14px;
+  color: var(--ink-soft);
+  font-family: var(--font-mono);
+  margin-bottom: 16px;
+}
+
+.case-study-meta span {
+  margin-right: 18px;
+}
+
+.sahitya-line {
+  font-family: var(--font-sanskrit);
+  font-size: 18px;
+  color: var(--teal-deep);
+  margin: 4px 0;
+}
+
+.sahitya-gloss {
+  font-size: 15px;
+  color: var(--ink-soft);
+  font-style: italic;
+  margin: 2px 0 14px 0;
+}
+
+/* ============================================================
+   TABLES
+   ============================================================ */
+
+table.avarana-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 28px 0 40px 0;
+  font-size: 15px;
+}
+
+table.avarana-table th {
+  background: var(--teal-deep);
+  color: var(--patra-tan);
+  font-family: var(--font-mono);
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-size: 12px;
+  padding: 12px 14px;
+  text-align: left;
+}
+
+table.avarana-table td {
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--paper-line);
+  vertical-align: top;
+}
+
+table.avarana-table tr:nth-child(even) td {
+  background: rgba(156, 122, 36, 0.08);
+}
+
+table.avarana-table td.sanskrit-cell {
+  font-family: var(--font-sanskrit);
+  color: var(--kumkum-deep);
+}
+
+/* ============================================================
+   MARGIN NOTE / PULL QUOTE
+   ============================================================ */
+
+.pull-note {
+  float: right;
+  width: 260px;
+  margin: 6px 0 24px 32px;
+  padding: 18px 20px;
+  background: transparent;
+  border-top: 2px solid var(--gold);
+  border-bottom: 2px solid var(--gold);
+  font-size: 15px;
+  color: var(--ink-soft);
+  font-style: italic;
+}
+
+.pull-note strong {
+  display: block;
+  font-style: normal;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--kumkum);
+  margin-bottom: 8px;
+}
+
+/* ============================================================
+   BEEJA GRID
+   ============================================================ */
+
+.beeja-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin: 32px 0;
+}
+
+.beeja-card {
+  background: var(--card-bg);
+  border: 1px solid var(--paper-line);
+  padding: 20px;
+  text-align: center;
+  border-radius: 2px;
+}
+
+.beeja-card .akshara {
+  font-family: var(--font-sanskrit);
+  font-size: 34px;
+  color: var(--kumkum);
+  display: block;
+  margin-bottom: 8px;
+}
+
+.beeja-card .roman {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  letter-spacing: 0.1em;
+  color: var(--teal-deep);
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.beeja-card .desc {
+  font-size: 14px;
+  color: var(--ink-soft);
+  line-height: 1.5;
+}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+
+footer.colophon {
+  padding: 64px 0 96px 0;
+  text-align: center;
+  border-top: 3px double var(--gold);
+}
+
+.colophon-mark {
+  font-family: var(--font-sanskrit);
+  font-size: 24px;
+  color: var(--kumkum-deep);
+  margin-bottom: 14px;
+}
+
+.colophon-text {
+  max-width: 640px;
+  margin: 0 auto;
+  font-size: 15px;
+  color: var(--ink-soft);
+}
+
+.bibliography {
+  max-width: 780px;
+  margin: 0 auto;
+  text-align: left;
+  padding-top: 32px;
+}
+
+.bibliography h3 {
+  font-family: var(--font-display);
+  font-size: 20px;
+  color: var(--teal-deep);
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.bibliography ol {
+  font-size: 14px;
+  color: var(--ink-soft);
+  padding-left: 22px;
+}
+
+.bibliography li {
+  margin-bottom: 10px;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 860px) {
+
+  .page-shell {
+    padding: 0 22px;
+  }
+
+  .hero-title {
+    font-size: 38px;
+  }
+
+  .toc-list {
+    columns: 1;
+  }
+
+  .pull-note {
+    float: none;
+    width: auto;
+    margin: 24px 0;
+  }
+
+  .beeja-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  table.avarana-table {
+    font-size: 13px;
+  }
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  html {
+    scroll-behavior: auto;
+  }
+
+}
+
+</style>
+</head>
+<body>
+
+<div class="page-shell">
+
+<header class="hero">
+  <div class="hero-eyebrow">श्री गुरुगुह</div>
+  <h1 class="hero-title">Akshara &amp; Nāda in the Kritis of <em>Muthuswami Dīkshitar</em></h1>
+  <p class="hero-subtitle">A study of syllable, seed-mantra, and sound-architecture as the compositional grammar of a Śrī Vidyā upāsaka</p>
+  <div class="hero-invocation">श्रीमातः शिवे शर्वाणि शिव वल्लभे श्री लक्ष्मी सरस्वती सेविते</div>
+</header>
+
+<nav class="toc" id="contents">
+  <div class="toc-heading">Contents</div>
+  <ul class="toc-list">
+    <li><span class="toc-num">I</span><a href="#life-initiation">Life, Guru, and Initiation</a></li>
+    <li><span class="toc-num">II</span><a href="#nada-brahman">Nāda as Brahman</a></li>
+    <li><span class="toc-num">III</span><a href="#sri-chakra">The Architecture of Śrī Chakra</a></li>
+    <li><span class="toc-num">IV</span><a href="#beeja-akshara">Bīja Akṣara Embedding</a></li>
+    <li><span class="toc-num">V</span><a href="#navavarna">The Kamalāmbā Navāvaraṇa Kritis</a></li>
+    <li><span class="toc-num">VI</span><a href="#raga-mudra">Rāga Mudrā as Sonic Signature</a></li>
+    <li><span class="toc-num">VII</span><a href="#vaggeyakara-mudra">The Guruguha Vāggeyakāra Mudrā</a></li>
+    <li><span class="toc-num">VIII</span><a href="#akshara-numerology">Akṣara Count and Mantra Numerology</a></li>
+    <li><span class="toc-num">IX</span><a href="#phonosemantics">Phonosemantics: Varṇa as Vibration</a></li>
+    <li><span class="toc-num">X</span><a href="#comparative">A Comparative Note on the Trinity</a></li>
+    <li><span class="toc-num">XI</span><a href="#bibliography-anchor">Sources and Further Study</a></li>
+  </ul>
+</nav>
+
+<main>
+
+<section class="chapter" id="life-initiation">
+  <div class="chapter-eyebrow">Chapter I</div>
+  <h2 class="chapter-title">Life, Guru, and Initiation</h2>
+  <p class="chapter-title-sanskrit">दीक्षा — the vow that gives a name its second meaning</p>
+  <p class="chapter-lede">
+    Before Muthuswami Dīkshitar (1775&ndash;1835) composed a single kriti, he was
+    given a mantra. That sequence &mdash; initiation before art &mdash; is the
+    single fact that explains almost every structural peculiarity discussed
+    in this document.
+  </p>
+
+  <div class="chapter-body">
+    <p>
+      Dīkshitar was born in Tiruvārūr, in the Tanjāvūr region of the Kāverī
+      delta, to Rāmasvāmi Dīkshitar, himself a musician and a devotee of
+      Subrahmaṇya. Family tradition holds that Rāmasvāmi undertook worship at
+      the Vaitheeswaran Koil dedicated to Lord Guruguha (a name of Skanda)
+      in order to be blessed with a son, and that the child was named
+      Muttusvāmi in gratitude. This detail is not biographical trivia: it
+      becomes the deity to whom the composer signs every one of his roughly
+      four hundred and fifty surviving kritis, under the mudra
+      <em>Guruguha</em>, a practice examined in Chapter VII.
+    </p>
+
+    <p>
+      The decisive event of his creative life took place away from Tiruvārūr.
+      Travelling north as a young man, Dīkshitar reached Kāśī (Vārāṇasī),
+      where he came under the guidance of a wandering ascetic and Śrī Vidyā
+      adept, Chidambaranātha Yogī. Accounts preserved within the Dīkshitar
+      family and later compiled by musicologists describe an extended period
+      of discipleship in which the young Dīkshitar was given formal
+      <em>dīkṣā</em> (initiation) into Śrī Vidyā upāsanā &mdash; the tantric
+      worship of the Goddess as Lalitā Tripurasundarī through the geometry of
+      the Śrī Chakra and the recitation of her mantra.
+    </p>
+
+    <p>
+      Two consequences followed directly. First, Dīkshitar returned south not
+      merely as a musician but as an initiate obligated to a specific
+      practice of sound: mantra japa, yantra dhyāna, and the recitation of
+      the Lalitā Sahasranāma and related Śrī Vidyā texts. Second, and this is
+      the part that concerns a study of his music, he appears to have
+      regarded composition itself as continuous with that practice rather
+      than separate from it. A kriti, in his hands, could carry the same
+      weight as a japa mālā: something recited with attention, syllable by
+      syllable, toward a specific spiritual end.
+    </p>
+
+    <h3>Why this matters for a listener</h3>
+    <p>
+      It is tempting to treat this biographical fact as background colour
+      and move directly to the music. But the initiation is the reason the
+      music behaves the way it does. Tyāgarāja's kritis are overwhelmingly
+      built from the emotional grammar of bhakti &mdash; longing, complaint,
+      surrender, addressed to Rāma in the intimate register of a devotee
+      speaking to a chosen deity. Dīkshitar's kritis, by contrast, read
+      more often like darśana catalogues: sthala (place), mūrti (form),
+      and mantra are laid out with the precision of a temple inventory,
+      because for an initiate of Śrī Vidyā, precision of this kind is
+      itself a devotional act. Where Tyāgarāja asks, Dīkshitar describes,
+      and the description is frequently mantric in its construction.
+    </p>
+
+    <div class="pull-note">
+      <strong>A note on sources</strong>
+      The most detailed traditional accounts of the Kāśī initiation appear
+      in the prefatory material assembled by Subbarāma Dīkshitar (grandnephew
+      of the composer) in the <em>Saṅgīta Sampradāya Pradarśini</em> (1904),
+      still the primary documentary source for the Dīkshitar corpus, its
+      notation, and its lineage of oral transmission.
+    </div>
+
+    <p>
+      Chidambaranātha Yogī is also credited, in family tradition, with
+      urging Dīkshitar toward the study of instrumental technique absorbed
+      during his years in the north, and with shaping the deliberate,
+      unhurried gait that distinguishes Dīkshitar's melodic phrasing from
+      the more ornamented, faster-moving lines common elsewhere in the
+      Carnatic idiom of the period. A composer trained to sit through long
+      japa and long dhyāna does not, it seems, write music that hurries.
+    </p>
+  </div>
+</section>
+
+<div class="divider-yantra">
+  <div class="line"></div>
+  <div class="glyph">ॐ</div>
+  <div class="line"></div>
+</div>
+
+<section class="chapter" id="nada-brahman">
+  <div class="chapter-eyebrow">Chapter II</div>
+  <h2 class="chapter-title">Nāda as Brahman</h2>
+  <p class="chapter-title-sanskrit">नादब्रह्मोपासना — worship through sound as ultimate reality</p>
+  <p class="chapter-lede">
+    Before any syllable can be said to carry a mantra, the tradition Dīkshitar
+    inherited must first establish that sound itself, prior to meaning, is
+    not incidental to the divine but constitutive of it.
+  </p>
+
+  <div class="chapter-body">
+    <p>
+      The doctrine of <em>Nāda Brahman</em> holds that the universe emerges
+      from an unstruck, causal vibration (<em>anāhata nāda</em>) that
+      differentiates, on manifestation, into audible sound (<em>āhata
+      nāda</em>). This is not unique to any one school: it runs through
+      Upaniṣadic reflection on <em>Oṃ</em> as the sound-form of Brahman,
+      through Kashmir Śaivism's account of <em>spanda</em> (the primal
+      vibratory pulse of consciousness) and <em>mātṛkā</em> (the alphabet as
+      goddess), and through the tantric identification of the Devī herself
+      with <em>Śabda Brahman</em>, the Word that precedes and produces the
+      world of objects.
+    </p>
+
+    <p>
+      Carnatic music inherits a domesticated version of this doctrine under
+      the name <em>Nādopāsanā</em>, worship through sound, most famously
+      articulated by Tyāgarāja in his kriti <em>Nādatanumaniśam</em>, which
+      addresses Śiva directly as one whose very body is made of nāda. What
+      distinguishes Dīkshitar is not that he held a different doctrine, but
+      that his Śrī Vidyā formation gave him a far more literal, almost
+      engineering-grade relationship to it. If nāda is Brahman, and if a
+      mantra is a precise sonic key to a specific aspect of that Brahman,
+      then a composition that reproduces the mantra's syllables in the
+      correct order, at the correct structural position within a musical
+      phrase, is not simply describing the deity. It is functioning, for the
+      duration of its performance, as an instrument of the same kind as the
+      mantra it contains.
+    </p>
+
+    <h3>Two models of composition</h3>
+    <p>
+      It is useful to separate two models that are easily conflated. In the
+      <strong>referential model</strong>, a song is a linguistic artefact
+      that points to the divine: its words describe attributes, narrate
+      episodes, or express longing, and the music serves the words as an
+      emotional amplifier. This is the dominant model for most devotional
+      composition across traditions, including a great deal of Tyāgarāja's
+      and Śyāma Śāstrī's output. In the <strong>instrumental model</strong>,
+      by contrast, the song is treated as a device: its syllables are
+      selected not only for what they mean but for what they do when
+      vocalised, in the manner of a mantra, a bīja, or a piece of ritual
+      utterance whose efficacy does not depend on the listener's
+      comprehension.
+    </p>
+
+    <p>
+      Dīkshitar's kritis operate in both registers simultaneously, and this
+      dual operation is exactly what this document tries to make legible.
+      The Sanskrit text of a Dīkshitar kriti will typically satisfy the
+      referential model on a first reading &mdash; it will name a deity,
+      a shrine, a philosophical attribute &mdash; while a second, closer
+      reading reveals a mantra, a bīja akṣara, or a numerically significant
+      syllable count folded into the same words, satisfying the
+      instrumental model as well. A listener who only ever engages the first
+      layer has not misunderstood the kriti; they have simply not yet
+      noticed its second architecture.
+    </p>
+
+    <div class="pull-note">
+      <strong>Śabda &amp; Artha</strong>
+      Sanskrit poetics distinguishes <em>śabda</em> (the sound-body of a
+      word) from <em>artha</em> (its meaning). Alaṅkāra-śāstra generally
+      treats śabda as a vehicle for artha. Dīkshitar's mantric technique
+      partially inverts this hierarchy: śabda is permitted to carry its own,
+      independent charge, so that the word functions correctly even for a
+      listener who does not parse the artha at all.
+    </div>
+
+    <p>
+      This is why Dīkshitar's music is so often described, even by listeners
+      with no interest in its tantric substructure, as architectural or
+      meditative rather than emotionally immediate. The pacing of his
+      phrases tends to respect the integrity of a syllable cluster; a bīja
+      or a mantra fragment is rarely split awkwardly across a melodic
+      ornament in the way an ordinary word might be. The music, in other
+      words, is frequently written to protect the akṣara, not merely to
+      decorate it.
+    </p>
+  </div>
+</section>
+
+<div class="divider-yantra">
+  <div class="line"></div>
+  <div class="glyph">ह्रीं</div>
+  <div class="line"></div>
+</div>
+
+<section class="chapter" id="sri-chakra">
+  <div class="chapter-eyebrow">Chapter III</div>
+  <h2 class="chapter-title">The Architecture of Śrī Chakra</h2>
+  <p class="chapter-title-sanskrit">नवावरण — nine enclosures, one bindu</p>
+  <p class="chapter-lede">
+    Chapter V will show a set of eleven kritis mapped onto nine ritual
+    enclosures. Before that mapping can mean anything, the enclosures
+    themselves need to be laid out.
+  </p>
+
+  <div class="chapter-body">
+    <p>
+      The Śrī Chakra (or Śrī Yantra) is the central worship-diagram of Śrī
+      Vidyā: nine interlocking triangles &mdash; four upward-pointing,
+      representing Śiva, and five downward-pointing, representing Śakti
+      &mdash; surrounded by a lotus of sixteen petals, a lotus of eight
+      petals, and an outer three-line square gateway (bhūpura). Ritual
+      worship of the yantra proceeds from the outermost enclosure inward,
+      each enclosure (<em>āvaraṇa</em>) understood as a threshold guarded by
+      its own retinue of yoginīs and presided over by a specific aspect of
+      the Goddess, culminating at the <em>bindu</em>, the dimensionless
+      point at the centre where Śiva and Śakti are said to be in
+      undifferentiated union.
+    </p>
+
+    <p>
+      This structure is not merely visual. Śrī Vidyā treats the yantra, the
+      mantra (principally the fifteen-syllable Pañcadaśī and its extended
+      sixteen-syllable form, the Ṣoḍaśī), and the physical temple or the
+      practitioner's own body as isomorphic: the same nine-fold movement
+      from periphery to centre can be worshipped geometrically, recited
+      verbally, or visualised somatically. Dīkshitar's contribution, as
+      Chapter V will detail, is to add a fourth register &mdash; the
+      nine-fold movement can also be <em>composed musically</em>, one kriti
+      per enclosure.
+    </p>
+
+    <table class="avarana-table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Āvaraṇa (enclosure)</th>
+          <th>Geometric form</th>
+          <th>Presiding function</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td class="sanskrit-cell">Trailokya Mohana</td>
+          <td>Outer three-line square (bhūpura) and ground</td>
+          <td>Enchantment of the three worlds; the threshold of approach</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td class="sanskrit-cell">Sarvāśāparipūraka</td>
+          <td>Sixteen-petalled lotus</td>
+          <td>Fulfilment of all desire; the retinue of the sixteen nityā śaktis</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td class="sanskrit-cell">Sarvasaṅkṣobhaṇa</td>
+          <td>Eight-petalled lotus</td>
+          <td>Agitation and awakening of the eight-fold subtle senses</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td class="sanskrit-cell">Sarvasaubhāgyadāyaka</td>
+          <td>Fourteen triangles (bahirdaśāra, outer decagon)</td>
+          <td>Bestowal of auspiciousness and prosperity</td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td class="sanskrit-cell">Sarvārthasādhaka</td>
+          <td>Ten triangles, outer daśāra</td>
+          <td>Accomplishment of every worldly and spiritual aim</td>
+        </tr>
+        <tr>
+          <td>6</td>
+          <td class="sanskrit-cell">Sarvarakṣākara</td>
+          <td>Ten triangles, inner daśāra</td>
+          <td>Protection of the worshipper from all obstruction</td>
+        </tr>
+        <tr>
+          <td>7</td>
+          <td class="sanskrit-cell">Sarvarogahara</td>
+          <td>Eight triangles (aṣṭāra)</td>
+          <td>Removal of affliction and disease, physical and subtle</td>
+        </tr>
+        <tr>
+          <td>8</td>
+          <td class="sanskrit-cell">Sarvasiddhiprada</td>
+          <td>Central triangle (trikoṇa)</td>
+          <td>Bestowal of the siddhis; the seat of the guru lineage</td>
+        </tr>
+        <tr>
+          <td>9</td>
+          <td class="sanskrit-cell">Sarvānandamaya</td>
+          <td>Bindu, the dimensionless point</td>
+          <td>Undifferentiated bliss; union of Śiva and Śakti</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>
+      A worshipper moving through these nine enclosures in ritual sequence
+      is not simply admiring a diagram. Each enclosure is entered through
+      its own mantra, its own visualisation, and its own offering, so that
+      the full navāvaraṇa pūjā is, functionally, a structured performance
+      &mdash; a sequence with a beginning, a middle, and a resolution at the
+      bindu. It is this performative, sequential quality that made the
+      yantra so readily transposable into a set of kritis: Dīkshitar did not
+      need to invent a narrative arc for his Kamalāmbā set, because the
+      yantra already supplied one.
+    </p>
+
+    <div class="pull-note">
+      <strong>Reading note</strong>
+      The count of "nine" enclosures is traditional and refers to worship
+      stages, not to a literal count of the visible geometric regions,
+      which some commentators subdivide differently. Different published
+      lineages of Śrī Vidyā transmission vary slightly in the naming and
+      grouping given above; the table follows the most widely cited
+      convention in South Indian textual sources.
+    </div>
+  </div>
+</section>
+
+<div class="divider-yantra">
+  <div class="line"></div>
+  <div class="glyph">क्रीं</div>
+  <div class="line"></div>
+</div>
+
+<section class="chapter" id="beeja-akshara">
+  <div class="chapter-eyebrow">Chapter IV</div>
+  <h2 class="chapter-title">Bīja Akṣara Embedding</h2>
+  <p class="chapter-title-sanskrit">बीजाक्षर — the seed-syllable that need not be translated</p>
+  <p class="chapter-lede">
+    A bīja mantra is a single syllable, ordinarily without independent
+    lexical meaning in classical Sanskrit, that tantric tradition treats as
+    the condensed sonic signature of a deity or a specific power of
+    consciousness. Dīkshitar's most distinctive technical habit is folding
+    these syllables into ordinary, grammatically complete Sanskrit sentences
+    so that the mantra hides in plain sight.
+  </p>
+
+  <div class="chapter-body">
+    <p>
+      A bīja functions differently from an ordinary word. Where a word like
+      <em>kamalā</em> (lotus, or the Goddess as lotus-dweller) carries
+      meaning that a listener parses through the ordinary channel of
+      language, a bīja like <em>hrīṃ</em> is traditionally held to act
+      directly on consciousness through its sound alone, independent of
+      whether the listener knows what, if anything, it "means." This is why
+      tantric manuals typically gloss a bīja not with a dictionary
+      definition but with a designated presiding deity, a designated cakra
+      or subtle centre, and a designated effect.
+    </p>
+
+    <div class="beeja-grid">
+      <div class="beeja-card">
+        <span class="akshara">ह्रीं</span>
+        <span class="roman">Hrīṃ &mdash; Māyā Bīja</span>
+        <span class="desc">The seed of Bhuvaneśvarī and of māyā-śakti itself; often called the heart-seed of the entire Śrī Vidyā mantra.</span>
+      </div>
+      <div class="beeja-card">
+        <span class="akshara">क्रीं</span>
+        <span class="roman">Krīṃ &mdash; Kālī Bīja</span>
+        <span class="desc">Associated with Kālī's power to cut through obstruction; invoked where removal of an obstacle precedes attainment.</span>
+      </div>
+      <div class="beeja-card">
+        <span class="akshara">श्रीं</span>
+        <span class="roman">Śrīṃ &mdash; Lakṣmī Bīja</span>
+        <span class="desc">The seed of auspiciousness, abundance, and śrī in its most literal sense: fortune, radiance, prosperity.</span>
+      </div>
+      <div class="beeja-card">
+        <span class="akshara">ऐं</span>
+        <span class="roman">Aiṃ &mdash; Vāc Bīja</span>
+        <span class="desc">The seed of Sarasvatī, speech, and articulate wisdom; frequently placed near invocations of learning or eloquence.</span>
+      </div>
+      <div class="beeja-card">
+        <span class="akshara">क्लीं</span>
+        <span class="roman">Klīṃ &mdash; Kāma Bīja</span>
+        <span class="desc">The seed of attraction and desire in its consecrated form, associated with Kṛṣṇa and with Kāmarāja Vidyā.</span>
+      </div>
+      <div class="beeja-card">
+        <span class="akshara">सौः</span>
+        <span class="roman">Sauḥ &mdash; Para Bīja</span>
+        <span class="desc">The seed of the Paradevatā, the closing syllable of the Ṣoḍaśī mantra, treated as the most guarded of all bījas.</span>
+      </div>
+    </div>
+
+    <h3>How Dīkshitar hides a bīja inside a sentence</h3>
+    <p>
+      The simplest form of embedding is direct citation: a kriti simply
+      names the bīja as a word within the sentence, as when a Devī kriti
+      describes the goddess as one who is meditated upon "with the hrīṃ-kāra"
+      or who is seated upon a syllable-throne built from her own mantra.
+      Because Sanskrit freely nominalises sounds (<em>hrīṃkāra</em> means,
+      literally, "the making of the sound hrīṃ"), a composer can refer to the
+      bīja grammatically while also, in performance, actually voicing it.
+      The sentence is simultaneously a description of the mantra and an
+      recitation of it.
+    </p>
+
+    <div class="case-study">
+      <div class="case-study-label">Case Study</div>
+      <div class="case-study-title">Śrī Chakra Rāja Sīmhāsaneśvari</div>
+      <div class="case-study-meta">
+        <span>Deity: Lalitā Tripurasundarī</span>
+        <span>Type: Independent Devī kriti (outside the Navāvaraṇa set)</span>
+      </div>
+      <p>
+        This kriti is the clearest publicly cited instance of Dīkshitar
+        composing what is, in effect, a musical exposition of the Śrī
+        Chakra itself. The sāhitya addresses the Goddess as the one
+        enthroned upon the Śrī Chakra understood as a royal seat
+        (siṃhāsana), and moves through her identity as the presiding deity
+        of the yantra's structure. Traditional commentary on the piece
+        treats it as a condensed statement of Śrī Vidyā cosmology set to
+        music &mdash; a single kriti performing, in miniature, what the
+        eleven Kamalāmbā kritis of Chapter V perform at full length.
+      </p>
+      <p class="sahitya-gloss">
+        Commentators reading this text alongside Śrī Vidyā manuals note
+        that its vocabulary is drawn directly from navāvaraṇa pūjā
+        terminology rather than from general devotional idiom, which is
+        itself evidence that the composer expected at least some listeners
+        to recognise the ritual register rather than only the poetic one.
+      </p>
+    </div>
+
+    <p>
+      A second, subtler form of embedding is positional rather than lexical:
+      a bīja-bearing word is placed at a structurally privileged point in
+      the composition &mdash; the opening syllable of the pallavi, the
+      eḍuppu (the point of melodic entry relative to the tāla cycle), or the
+      final word before a return to the refrain &mdash; so that the
+      performer necessarily gives it rhythmic and melodic emphasis whether
+      or not they consciously register its mantric status. This is a
+      technique shared with the setting of the raga mudra (Chapter VI): the
+      composer relies on ordinary performance practice, which naturally
+      stresses openings and cadences, to guarantee that the embedded
+      syllable receives attention.
+    </p>
+
+    <div class="pull-note">
+      <strong>A caution on over-reading</strong>
+      Not every occurrence of a syllable such as <em>hrīṃ</em> in a
+      Dīkshitar text is necessarily an intentional mantric placement;
+      Sanskrit devotional vocabulary is already saturated with such sounds
+      because the bīja themselves entered ordinary liturgical language
+      centuries before Dīkshitar. The stronger evidence for deliberate
+      embedding lies in cases where a bīja recurs at a structurally marked
+      position across multiple kritis addressed to the same deity, which is
+      exactly the pattern the Navāvaraṇa set was designed to test.
+    </div>
+  </div>
+</section>
+
+<div class="divider-yantra">
+  <div class="line"></div>
+  <div class="glyph">श्रीं</div>
+  <div class="line"></div>
+</div>
+
+<section class="chapter" id="navavarna">
+  <div class="chapter-eyebrow">Chapter V</div>
+  <h2 class="chapter-title">The Kamalāmbā Navāvaraṇa Kritis</h2>
+  <p class="chapter-title-sanskrit">नवावरण कीर्तनानि — nine enclosures set to eleven songs</p>
+  <p class="chapter-lede">
+    Composed for the Kamalāmbā shrine within the great Tyāgarājasvāmi temple
+    complex at Tiruvarūr &mdash; Dīkshitar's own birthplace &mdash; this set
+    is the single work in which every idea discussed so far is made
+    explicit and simultaneous: philosophy, geometry, mantra, and melody
+    presented as one structure.
+  </p>
+
+  <svg class="chakra-marker" viewBox="0 0 100 100" aria-hidden="true">
+    <circle class="ring-inactive" cx="50" cy="50" r="46"></circle>
+    <circle class="ring-inactive" cx="50" cy="50" r="37"></circle>
+    <circle class="ring-inactive" cx="50" cy="50" r="28"></circle>
+    <circle class="ring-active" cx="50" cy="50" r="19"></circle>
+    <circle class="ring-inactive" cx="50" cy="50" r="10"></circle>
+    <circle class="bindu" cx="50" cy="50" r="3"></circle>
+  </svg>
+
+  <div class="chapter-body">
+    <p>
+      The set is built around the Goddess Kamalāmbā, worshipped at Tiruvārūr
+      as the consort of Śiva in his form as Tyāgarāja. Dīkshitar composed a
+      sequence of Sanskrit kritis, entirely for this one deity, that
+      traditional listings count as eleven pieces in total: nine
+      corresponding directly to the nine āvaraṇas of the Śrī Chakra laid
+      out in Chapter III, framed by an opening dhyāna-type invocation and a
+      closing maṅgalam. Because the enclosing pair are sometimes counted
+      separately and sometimes folded into the "nine," published sources
+      vary between describing the collection as having nine, eleven, or
+      (rarely) twelve members; this document follows the widely used
+      eleven-piece reckoning.
+    </p>
+
+    <p>
+      What makes the set remarkable is not merely its scale but its
+      self-declaring structure: rather than leaving the āvaraṇa
+      correspondence to inference, each core kriti names its own enclosure
+      within the sāhitya itself, typically by direct reference to the
+      enclosure's Sanskrit designation from Chapter III's table. A listener
+      does not need external commentary to know that a given kriti concerns
+      the Trailokya Mohana enclosure, because the words <em>trailokya
+      mohana cakra svāmini</em>, or a close paraphrase, are sung within it.
+      This is the clearest documented instance, anywhere in the Trinity's
+      output, of a composer using the sāhitya of a song as a literal caption
+      for its place inside a larger ritual architecture.
+    </p>
+
+    <h3>A structural, not merely thematic, correspondence</h3>
+    <p>
+      Musicological commentary on the set (notably the analytical notes
+      accompanying modern performing editions and the discussion in
+      Subbarāma Dīkshitar's <em>Saṅgīta Sampradāya Pradarśini</em>) generally
+      agrees on three broader patterns, even where the fine details of raga
+      choice for individual pieces are debated:
+    </p>
+
+    <table class="avarana-table">
+      <thead>
+        <tr>
+          <th>Pattern</th>
+          <th>Description</th>
+          <th>Musical consequence</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Progressive interiority</td>
+          <td>Each kriti addresses an enclosure nearer to the bindu than the one before it, following the ritual sequence of navāvaraṇa pūjā exactly.</td>
+          <td>The set is meant to be heard, or at minimum understood, as a single ordered journey rather than eleven independent songs.</td>
+        </tr>
+        <tr>
+          <td>Explicit self-naming</td>
+          <td>The presiding cakra name from Chapter III's table is sung, in Sanskrit, within the body of the kriti devoted to that cakra.</td>
+          <td>The sāhitya functions as its own index; no separate label is needed to identify which enclosure a given kriti depicts.</td>
+        </tr>
+        <tr>
+          <td>Terminal resolution</td>
+          <td>The closing maṅgalam addresses the bindu directly, using language of non-duality and completion rather than petition, mirroring the pūjā's own movement from approach to union.</td>
+          <td>The set has a genuine ending in the musical sense &mdash; a tonal and textual "arrival" &mdash; rather than simply stopping after nine items.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="case-study">
+      <div class="case-study-label">Case Study &mdash; Outermost Enclosure</div>
+      <div class="case-study-title">Kamalāmbike Bhajare</div>
+      <div class="case-study-meta">
+        <span>Rāga: Ānandabhairavi</span>
+        <span>Function: Opening kriti of the core sequence</span>
+        <span>Enclosure: Trailokya Mohana</span>
+      </div>
+      <p>
+        The opening piece of the set is also its most widely performed
+        outside the full navāvaraṇa context, likely because Ānandabhairavi
+        is itself a warm, accessible rāga well suited to an audience's first
+        approach &mdash; an apt musical choice for a kriti depicting the
+        outermost, most public-facing enclosure of the yantra, the one a
+        worshipper crosses before any of the interior mysteries are
+        approached. The text addresses Kamalāmbā as the source of universal
+        enchantment (the literal sense of <em>trailokya mohana</em>,
+        "enchantment of the three worlds"), establishing in its first lines
+        the identity between the goddess and the very first threshold of
+        her own yantra.
+      </p>
+      <p class="sahitya-gloss">
+        The compositional logic here is worth pausing on: rather than
+        describing the goddess and, separately, describing the chakra, the
+        text collapses the two descriptions into one, since in Śrī Vidyā
+        cosmology the goddess is not merely enthroned upon the yantra but is
+        held to be identical with it at every one of its nine levels.
+      </p>
+    </div>
+
+    <div class="case-study">
+      <div class="case-study-label">Case Study &mdash; Terminal Enclosure</div>
+      <div class="case-study-title">The Closing Maṅgalam</div>
+      <div class="case-study-meta">
+        <span>Function: Closing piece of the full set</span>
+        <span>Enclosure: Sarvānandamaya (bindu)</span>
+      </div>
+      <p>
+        Where the opening kriti addresses enchantment and approach, the
+        concluding maṅgalam addresses completion. In navāvaraṇa pūjā
+        practice, the bindu is not worshipped as one more deity among the
+        nine but as the point at which worship itself dissolves into
+        identity: the worshipper does not so much reach the Goddess at the
+        bindu as recognise that separation was never real to begin with.
+        Traditional commentary on Dīkshitar's closing piece emphasises its
+        shift in register from petition to benediction, consistent with
+        this theology &mdash; the piece reads less like a request and more
+        like a blessing pronounced from a position already inside the
+        goddess's presence.
+      </p>
+    </div>
+
+    <p>
+      It is worth being direct about the limits of what can be stated with
+      full confidence here. The precise rāga assigned to each of the nine
+      interior kritis, and the exact wording used to name each enclosure, is
+      preserved with high reliability for the best-known pieces in the set
+      (the opening Kamalāmbike Bhajare foremost among them) but shows
+      genuine variation across manuscript and printed traditions for some of
+      the remaining kritis, where different editions of the Dīkshitar corpus
+      disagree on details of tāla and even on the precise count of
+      constituent pieces. A responsible account of the set states the
+      structural principle &mdash; nine kritis, nine enclosures, explicit
+      self-naming, terminal resolution at the bindu &mdash; with confidence,
+      while treating any single published table matching every individual
+      kriti to a rāga as a specific edition's reading rather than an
+      uncontested universal fact.
+    </p>
+
+    <div class="pull-note">
+      <strong>Why this caution matters</strong>
+      A study built on syllable-level precision loses its own credibility
+      if it overstates precision at the level of the whole set. The
+      strongest claims this document makes about the Navāvaraṇa kritis are
+      the ones best supported across independent sources: their number,
+      their dedication, their explicit self-naming technique, and their
+      correspondence to the navāvaraṇa pūjā sequence.
+    </div>
+  </div>
+</section>
+
+<div class="divider-yantra">
+  <div class="line"></div>
+  <div class="glyph">ऐं</div>
+  <div class="line"></div>
+</div>
+
+<section class="chapter" id="raga-mudra">
+  <div class="chapter-eyebrow">Chapter VI</div>
+  <h2 class="chapter-title">Rāga Mudrā as Sonic Signature</h2>
+  <p class="chapter-title-sanskrit">रागमुद्रा — the raga's own name, hidden inside its own song</p>
+  <p class="chapter-lede">
+    A raga mudra is the deliberate placement of a raga's name, or a close
+    phonetic relative of it, within the very lyrics of a composition set in
+    that raga. Dīkshitar is, by wide consensus among Carnatic musicologists,
+    the composer of the Trinity who used this device most systematically.
+  </p>
+
+  <div class="chapter-body">
+    <p>
+      The technique exploits a convenient accident of the Sanskrit devotional
+      vocabulary: a great many rāga names in the Carnatic system are also,
+      independently, epithets of Śiva, Viṣṇu, or the Goddess, or ordinary
+      Sanskrit words for auspicious qualities. This means a composer can
+      write a perfectly natural devotional sentence that happens to contain
+      the raga's name doing real grammatical work, rather than being
+      awkwardly inserted. The mudra, when done well, does not read as a
+      composer's watermark stamped onto the text; it reads as an ordinary
+      word that simply happens to double as a signature.
+    </p>
+
+    <div class="case-study">
+      <div class="case-study-label">Case Study</div>
+      <div class="case-study-title">Akṣayaliṅga Vibho</div>
+      <div class="case-study-meta">
+        <span>Rāga: Śaṅkarābharaṇam</span>
+        <span>Deity: Śiva as Akṣayaliṅgeśvara</span>
+      </div>
+      <p>
+        This kriti is one of the most frequently cited textbook examples of
+        raga mudra in the entire Carnatic repertoire. The text addresses
+        Śiva using the epithet <em>Śaṅkara</em>, which is simultaneously an
+        entirely ordinary and expected name for the deity being praised and
+        a direct phonetic citation of the rāga, Śaṅkarābharaṇam, in which
+        the piece is composed. Nothing about the sentence reads as
+        contrived: a listener unaware of the mudra hears only a devotional
+        address to Śiva; a listener aware of it hears the composer quietly
+        naming his own musical material inside the act of praising the
+        deity that material serves.
+      </p>
+    </div>
+
+    <p>
+      Because so many rāga names overlap with deity epithets or auspicious
+      adjectives, the device could, in principle, occur by accident.
+      What makes its presence in Dīkshitar's output a genuine compositional
+      signature rather than coincidence is its consistency: the mudra
+      recurs across a large enough proportion of his corpus, and often
+      appears at structurally prominent points &mdash; the pallavi's opening
+      line, or the anupallavi's cadential phrase &mdash; that musicologists
+      treat it as a deliberate and recognisable authorial habit rather than
+      an occasional pun.
+    </p>
+
+    <h3>Why embed the raga at all?</h3>
+    <p>
+      Three explanations are usually offered, and they are not mutually
+      exclusive. The first is pedagogical: naming the rāga inside the
+      composition helps a student or a listener confirm, by ear, what they
+      are hearing, in an oral tradition where written notation historically
+      played a secondary role to memorised performance. The second is
+      authorial: much like the vāggeyakāra mudra discussed in the next
+      chapter, a raga mudra anchors the piece to its maker in a tradition
+      where attribution could otherwise drift across generations of oral
+      transmission. The third, consistent with everything argued in this
+      document so far, is properly mantric: if nāda is understood as
+      already sacred in itself, then naming the specific modal structure
+      (the rāga) through which that sacred sound is being channelled is
+      itself a form of acknowledgement, not unlike naming a specific
+      mantra's presiding deity before reciting it.
+    </p>
+
+    <div class="pull-note">
+      <strong>A distinction worth holding onto</strong>
+      Raga mudra should not be confused with bīja embedding (Chapter IV).
+      A bīja is meant to function independently of ordinary meaning; a raga
+      mudra depends entirely on ordinary meaning, using a word's normal
+      sense as cover for a second, referential function. The two techniques
+      sit at opposite ends of the same underlying idea: that a syllable in
+      a Dīkshitar text is rarely doing only one job.
+    </div>
+
+    <p>
+      Later musicological scholarship, notably work compiling and
+      cross-referencing the full extant corpus, has attempted systematic
+      surveys of how many of Dīkshitar's roughly four hundred and fifty
+      kritis contain a verifiable raga mudra. Estimates vary depending on
+      how strictly "verifiable" is defined &mdash; a strict count requires
+      the raga name to appear as an unambiguous, grammatically load-bearing
+      word rather than a loose phonetic echo &mdash; but even conservative
+      counts place the practice among the most extensive uses of this
+      device by any composer in the tradition's documented history.
+    </p>
+  </div>
+</section>
+
+<div class="divider-yantra">
+  <div class="line"></div>
+  <div class="glyph">गुरुगुह</div>
+  <div class="line"></div>
+</div>
+
+<section class="chapter" id="vaggeyakara-mudra">
+  <div class="chapter-eyebrow">Chapter VII</div>
+  <h2 class="chapter-title">The Guruguha Vāggeyakāra Mudrā</h2>
+  <p class="chapter-title-sanskrit">वाग्गेयकारमुद्रा — the composer's own name folded into the composition</p>
+  <p class="chapter-lede">
+    A vāggeyakāra mudrā is a composer's signature: a name or epithet woven
+    into the closing lines of a kriti, typically within the caraṇam,
+    identifying its author. Dīkshitar's signature is almost never his own
+    given name. It is, instead, the name of the deity his father worshipped
+    for his birth.
+  </p>
+
+  <div class="chapter-body">
+    <p>
+      Nearly all of Dīkshitar's surviving kritis close with some form of
+      the word <em>Guruguha</em>, an epithet of Skanda-Subrahmaṇya meaning,
+      approximately, "the guru who is himself a cave" or "the hidden guru,"
+      a name associated with Skanda's role as the one who instructed even
+      Śiva in the meaning of the praṇava. This is the same deity to whom
+      Rāmasvāmi Dīkshitar prayed for a son, discussed in Chapter I, which
+      means the signature is not simply an authorial flourish but a
+      continuous act of filial and devotional acknowledgment repeated
+      several hundred times across the corpus.
+    </p>
+
+    <h3>Signature as identity, not just attribution</h3>
+    <p>
+      Ordinary vāggeyakāra mudrā practice in Carnatic music &mdash;
+      Tyāgarāja's use of "Tyāgarāja" or "Tyāgarājanuta," Śyāma Śāstrī's use
+      of "Śyāmakṛṣṇa" &mdash; typically functions as a straightforward
+      attribution device: a way for a listener to identify the composer
+      even when a piece circulates without a written title. Dīkshitar's
+      practice does something additional. By signing as Guruguha rather
+      than as Muttusvāmi, he folds his own biographical debt to a specific
+      deity into every single composition, so that the signature performs
+      double duty as both authorial mark and personal devotional statement.
+      In a tradition that treats a composer's chosen iṣṭadevatā (personal
+      deity) as central to understanding their entire output, this detail
+      is not incidental: it tells a listener, in every kriti, whose
+      protection the composer believed himself to be composing under.
+    </p>
+
+    <p>
+      This has a further, more technical consequence connected to the
+      themes of this document. Guruguha, in Skanda-worship contexts, is
+      closely associated with the transmission of sacred knowledge through
+      sound &mdash; tradition holds that Skanda instructed Śiva in the
+      meaning of the praṇava at Chidambaram, an episode frequently invoked
+      to explain why Skanda carries the epithet "guru" despite being Śiva's
+      own son. A composer signing consistently under this name is therefore
+      signing, each time, under a deity specifically associated with sacred
+      sound-transmission &mdash; a small but consistent reinforcement of the
+      Nāda Brahman framework discussed in Chapter II, present at the close
+      of nearly every piece he wrote.
+    </p>
+
+    <div class="pull-note">
+      <strong>Variant forms of the mudra</strong>
+      Depending on grammatical context and metrical need, the signature
+      appears in several inflected forms across the corpus &mdash;
+      Guruguha, Guruguhaya, Guruguhamūrtiḥ, and compounds such as
+      Guruguharatnam &mdash; but the root name remains constant, allowing
+      cataloguers to identify authorship with very high confidence even in
+      pieces transmitted with incomplete attribution.
+    </div>
+
+    <p>
+      It is worth noting a small number of exceptions and special cases:
+      certain works employ compound mudras that combine Guruguha with a
+      reference to the specific deity or shrine being praised, and a
+      handful of pieces, particularly some attributed to family members
+      writing in a closely related idiom, use adjacent but distinguishable
+      signatures. Musicological cataloguing of the corpus depends heavily on
+      exactly this kind of careful mudra identification to distinguish
+      authentic Dīkshitar compositions from works by his brothers,
+      Bāluswāmi and Chinnaswāmi Dīkshitar, or by later composers writing in
+      a consciously Dīkshitar-influenced style.
+    </p>
+  </div>
+</section>
+
+<div class="divider-yantra">
+  <div class="line"></div>
+  <div class="glyph">पञ्चदशी</div>
+  <div class="line"></div>
+</div>
+
+<section class="chapter" id="akshara-numerology">
+  <div class="chapter-eyebrow">Chapter VIII</div>
+  <h2 class="chapter-title">Akṣara Count and Mantra Numerology</h2>
+  <p class="chapter-title-sanskrit">पञ्चदशाक्षरी, षोडशाक्षरी — fifteen syllables, then sixteen</p>
+  <p class="chapter-lede">
+    Śrī Vidyā's central mantra exists in two authorised lengths, and the
+    difference between them is exactly one syllable. That single added
+    syllable is treated as so significant that its recitation is
+    traditionally restricted to advanced initiates. A tradition this
+    attentive to syllable count is one in which counting syllables in a
+    song is not an eccentric analytical exercise but a natural extension of
+    ordinary practice.
+  </p>
+
+  <div class="chapter-body">
+    <p>
+      The <em>Pañcadaśī</em>, the fifteen-syllable form of the Śrī Vidyā
+      mantra, is divided traditionally into three kūṭas (clusters) of five
+      syllables each, corresponding respectively to fire (vāgbhava kūṭa),
+      the sun (kāmarāja or madhya kūṭa), and the moon (śakti kūṭa). The
+      <em>Ṣoḍaśī</em>, the sixteen-syllable extension, adds the bīja
+      <em>sauḥ</em> discussed in Chapter IV, and is generally reserved for
+      initiates who have progressed beyond the basic Pañcadaśī
+      dīkṣā. The precision with which Śrī Vidyā tracks these counts &mdash;
+      five, five, five, then one more &mdash; establishes syllable-counting
+      itself as a legitimate mode of sacred attention, not an incidental
+      feature of the tradition.
+    </p>
+
+    <h3>Numerology as compositional constraint</h3>
+    <p>
+      Scholars examining Dīkshitar's texts alongside this numerological
+      background have proposed that certain structural choices in his
+      kritis &mdash; the number of āvartanas (tāla cycles) given to a
+      pallavi, the number of words in an anupallavi line, or the internal
+      division of a caraṇam into sub-phrases &mdash; occasionally echo
+      numbers with Śrī Vidyā significance: three (the kūṭas), five (the
+      syllables per kūṭa), nine (the āvaraṇas), fifteen, and sixteen. This
+      line of analysis is more interpretively delicate than the mudra
+      techniques discussed in Chapters IV, VI, and VII, because a musical
+      phrase of, say, five words can easily arise from ordinary metrical or
+      grammatical necessity rather than deliberate numerological design.
+      The claim is strongest exactly where the Navāvaraṇa set is concerned,
+      since a nine-part structure explicitly mirroring the nine āvaraṇas is
+      not a subtle coincidence but the entire premise of the collection.
+    </p>
+
+    <div class="pull-note">
+      <strong>How to read a numerological claim responsibly</strong>
+      The right posture toward this kind of analysis is neither uncritical
+      acceptance nor blanket dismissal. Where a structural number
+      corresponds to something the composer is independently known to have
+      cared about &mdash; nine kritis for nine āvaraṇas is the paradigm case
+      &mdash; the correspondence deserves to be taken seriously as
+      intentional design. Where a number arises only through a strained
+      count of words or syllables that requires selective inclusion or
+      exclusion to reach the "correct" total, it is better treated as an
+      interesting pattern than as established compositional intent.
+    </div>
+
+    <p>
+      A more secure observation, requiring no contested counting at all, is
+      that Dīkshitar's overall katapayādi and mudra practices show a
+      composer comfortable treating number as a carrier of meaning
+      independent of ordinary language. The katapayādi system itself &mdash;
+      an ancient Indian scheme for encoding numbers as consonants, used
+      elsewhere in the tradition for encoding dates and mathematical
+      constants inside verse &mdash; belongs to the same broader intellectual
+      culture that produced Śrī Vidyā's kūṭa-based mantra structure: both
+      systems treat the akṣara not merely as a unit of pronunciation but as
+      a unit that can carry a numerical or structural payload alongside its
+      ordinary linguistic one. Dīkshitar's music sits comfortably inside
+      this wider culture of syllable-as-carrier, whether or not every
+      individual numerological claim made about a specific kriti can be
+      verified with certainty.
+    </p>
+
+    <h3>The kūṭa structure as a musical template</h3>
+    <p>
+      One further correspondence deserves mention because it is structural
+      rather than merely numerical. The Pañcadaśī's three kūṭas are not
+      simply three equal groups of five syllables; each kūṭa is
+      traditionally associated with a distinct register of the mantra's
+      operation &mdash; the first with the fire of transformation, the
+      second with the sun of illumination and sovereignty, the third with
+      the moon of nourishment and bliss. A kriti in three sections
+      (pallavi, anupallavi, caraṇam) already possesses a native three-part
+      architecture; Dīkshitar's practice of assigning a distinct emotional
+      or philosophical register to each of these three sections, rather
+      than simply repeating the same sentiment three times with escalating
+      musical intensity, mirrors the kūṭa structure's own insistence that
+      three parts of a mantra are not interchangeable but sequential and
+      qualitatively different from one another.
+    </p>
+  </div>
+</section>
+
+<div class="divider-yantra">
+  <div class="line"></div>
+  <div class="glyph">वर्ण</div>
+  <div class="line"></div>
+</div>
+
+<section class="chapter" id="phonosemantics">
+  <div class="chapter-eyebrow">Chapter IX</div>
+  <h2 class="chapter-title">Phonosemantics: Varṇa as Vibration</h2>
+  <p class="chapter-title-sanskrit">मातृका — the alphabet understood as a living power</p>
+  <p class="chapter-lede">
+    Tantric linguistics does not treat the Sanskrit alphabet as a neutral
+    inventory of sounds available for building words. Each varṇa (phoneme)
+    is assigned its own resonance, its own presiding power, and, in several
+    systems, its own correspondence to a specific subtle centre in the
+    body. This is the deepest and least translatable layer of Dīkshitar's
+    sound-craft.
+  </p>
+
+  <div class="chapter-body">
+    <p>
+      The doctrine of <em>mātṛkā</em>, most fully elaborated within Kashmir
+      Śaivism but absorbed broadly into later tantric and Śrī Vidyā
+      thought, holds that the fifty-odd phonemes of the Sanskrit alphabet
+      are themselves a garland of goddesses, collectively personifying the
+      creative power of speech before it differentiates into meaningful
+      words. On this view, a consonant or vowel carries an inherent
+      vibratory character prior to, and independent of, whatever word it
+      happens to end up inside. The same letter that appears in a mundane
+      word for "pot" and in a sacred bīja mantra is, on the level of pure
+      vibration, doing the identical thing in both places; it is only at
+      the level of combination that one context becomes ordinary language
+      and the other becomes mantra.
+    </p>
+
+    <h3>Consonant classes and their traditional associations</h3>
+    <p>
+      Classical Sanskrit phonetics already groups consonants by point of
+      articulation &mdash; guttural, palatal, retroflex, dental, labial
+      &mdash; a system inherited from the Prātiśākhyas and formalised in
+      Pāṇini's grammar. Tantric phonosemantics layers additional
+      significance onto this inherited structure, associating classes of
+      sound with classes of experience: gutturals with the throat and with
+      undifferentiated potential, labials with completion and closure,
+      sibilants with a hissing, contractive, protective quality often
+      linked to bīja mantras of removal and defence. A composer working
+      inside this framework has reason to prefer certain sound-classes at
+      certain structural moments &mdash; a closing cadence built from
+      labial closure syllables, for instance, or an opening invocation
+      favouring open, resonant vowels &mdash; independent of what those
+      syllables happen to mean in ordinary translation.
+    </p>
+
+    <div class="pull-note">
+      <strong>Why this is hard to verify from outside</strong>
+      Phonosemantic intention is, by its nature, the least externally
+      checkable of all the techniques discussed in this document. A raga
+      mudra or a bīja citation can be pointed to on the page; a claim that
+      a composer favoured gutturals at a given moment because of their
+      traditional association with undifferentiated potential rests on
+      inference about intention that cannot be confirmed the way a named
+      word can be. This layer is best treated as the tradition's own
+      account of what its sounds are doing, offered here as context for
+      understanding why Dīkshitar's phonetic choices felt meaningful within
+      his own frame of reference, rather than as an independently provable
+      claim about any specific passage.
+    </div>
+
+    <p>
+      What can be stated with more confidence is the general aesthetic
+      consequence: listeners across generations, including performers with
+      no interest in tantric theory, have independently described
+      Dīkshitar's Sanskrit as unusually sonorous and deliberately paced
+      compared to contemporaneous Telugu-language kritis of the same
+      period, an impression consistent with a compositional habit of
+      choosing sound for its own textured weight and not merely for its
+      referential content. Whether or not every phoneme was selected with
+      conscious mātṛkā theory in mind, the overall texture of the corpus is
+      recognisably one in which sound has been given room to matter on its
+      own terms.
+    </p>
+
+    <h3>Vowel length and melodic patience</h3>
+    <p>
+      A related, more directly musical observation concerns vowel
+      quantity. Sanskrit prosody distinguishes short and long vowels as a
+      structural feature of metre, not merely pronunciation; a long vowel
+      occupies, by definition, more time than a short one. Dīkshitar's
+      characteristically unhurried melodic phrasing, noted already in
+      Chapter I in connection with his training under Chidambaranātha
+      Yogī, gives long vowels the room prosody already assigns them, rather
+      than compressing them to fit a faster melodic pulse. The effect,
+      whether or not it was theorised in exactly these terms by the
+      composer himself, is a setting of Sanskrit that respects the
+      language's own internal sense of duration &mdash; itself a small,
+      continuous act of fidelity to the akṣara as something more than
+      interchangeable syllabic filler.
+    </p>
+  </div>
+</section>
+
+<div class="divider-yantra">
+  <div class="line"></div>
+  <div class="glyph">त्रयी</div>
+  <div class="line"></div>
+</div>
+
+<section class="chapter" id="comparative">
+  <div class="chapter-eyebrow">Chapter X</div>
+  <h2 class="chapter-title">A Comparative Note on the Trinity</h2>
+  <p class="chapter-title-sanskrit">त्रयी — three composers, three relationships to the word</p>
+  <p class="chapter-lede">
+    Tyāgarāja, Śyāma Śāstrī, and Muthuswami Dīkshitar are conventionally
+    grouped as the Carnatic Trinity because they were near-contemporaries
+    working within the same broad idiom. Their relationship to language and
+    sound, however, differs sharply enough that the grouping can obscure as
+    much as it reveals.
+  </p>
+
+  <div class="chapter-body">
+    <p>
+      Tyāgarāja's kritis are built overwhelmingly from the emotional
+      register of personal bhakti. His Telugu texts address Rāma directly,
+      often in the voice of a devotee complaining, pleading, instructing,
+      or rejoicing, and his most celebrated compositions &mdash; the
+      <em>Pañcaratna Kritis</em> foremost among them &mdash; are prized
+      precisely for the immediacy and psychological candour of their
+      language. Word choice, for Tyāgarāja, serves feeling; a syllable's
+      job is to carry the emotional weight of the line to the listener as
+      directly as possible.
+    </p>
+
+    <p>
+      Śyāma Śāstrī, working in a smaller output concentrated on Devī
+      compositions, occupies a middle position. His texts are devotional
+      in the same immediate register as Tyāgarāja's, often composed in
+      Telugu with Sanskrit admixture, but his subject matter &mdash; almost
+      exclusively the Goddess in her various local and cosmic forms &mdash;
+      brings him closer than Tyāgarāja to the tantric vocabulary that
+      Dīkshitar treats systematically. Śyāma Śāstrī's famous svarajati and
+      varṇa compositions in praise of the Goddess show an intimate,
+      personal address to Devī that shares Dīkshitar's subject matter
+      without adopting Dīkshitar's mantric compositional method.
+    </p>
+
+    <h3>Where Dīkshitar diverges</h3>
+    <p>
+      Dīkshitar's Sanskrit texts, overwhelmingly favouring Sanskrit over
+      the vernacular, already signal a different orientation: Sanskrit, in
+      this cultural context, is the language of śāstra, mantra, and formal
+      ritual address, not the language in which one most naturally
+      expresses spontaneous personal feeling. Where Tyāgarāja narrates a
+      relationship, Dīkshitar catalogues a cosmology &mdash; naming shrines,
+      naming philosophical attributes, naming the specific mantra and
+      yantra associated with a deity, often within the same breath used to
+      praise that deity's beauty or compassion. The difference is not that
+      Dīkshitar felt less; biographical tradition describes him as a
+      devoted practitioner rather than a detached technician. The
+      difference is in what he understood devotion's proper linguistic
+      register to be: precision as an offering, rather than confession as
+      an offering.
+    </p>
+
+    <table class="avarana-table">
+      <thead>
+        <tr>
+          <th>Composer</th>
+          <th>Primary language</th>
+          <th>Characteristic register</th>
+          <th>Relationship to akṣara</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Tyāgarāja</td>
+          <td>Telugu</td>
+          <td>Personal, confessional, narrative bhakti</td>
+          <td>Syllable serves feeling; clarity of emotional address is paramount</td>
+        </tr>
+        <tr>
+          <td>Śyāma Śāstrī</td>
+          <td>Telugu with Sanskrit admixture</td>
+          <td>Intimate address to the Goddess, often as a suppliant child</td>
+          <td>Syllable serves intimacy; devotional immediacy takes priority over mantric structure</td>
+        </tr>
+        <tr>
+          <td>Muthuswami Dīkshitar</td>
+          <td>Sanskrit (with occasional Maṇipravāḷa and Telugu works)</td>
+          <td>Cosmological, encyclopaedic, ritually precise</td>
+          <td>Syllable serves structure; mantra, mudra, and akṣara-count operate alongside ordinary meaning</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>
+      None of this ranks the three composers against one another; each
+      approach answers to a coherent and internally consistent devotional
+      logic. It does, however, explain why a listener trained primarily on
+      Tyāgarāja's idiom can find a first encounter with Dīkshitar's Sanskrit
+      kritis comparatively austere or opaque: the emotional cues that guide
+      a listener through a Tyāgarāja kriti are present in Dīkshitar's work
+      too, but they sit underneath a second, denser layer of ritual and
+      mantric reference that rewards exactly the kind of syllable-by-syllable
+      attention this document has tried to model.
+    </p>
+  </div>
+</section>
+
+<div class="divider-yantra">
+  <div class="line"></div>
+  <div class="glyph">इति</div>
+  <div class="line"></div>
+</div>
+
+<section class="chapter" id="closing-synthesis">
+  <div class="chapter-eyebrow">Synthesis</div>
+  <h2 class="chapter-title">One Grammar, Four Registers</h2>
+  <p class="chapter-title-sanskrit">उपसंहार — drawing the threads together</p>
+
+  <div class="chapter-body">
+    <p>
+      Across the ten chapters above, a single underlying claim has been
+      approached from four directions. The claim is that Dīkshitar treated
+      the akṣara &mdash; the individual syllable &mdash; as a unit capable of
+      operating in at least four registers at once, and that his kritis
+      were composed so that several of these registers could be active in
+      the same word simultaneously without contradiction.
+    </p>
+
+    <p>
+      The <strong>referential register</strong> is the one shared with
+      almost all devotional composition anywhere: the syllable participates
+      in ordinary language, naming a deity, an attribute, a place, a
+      feeling. The <strong>mantric register</strong>, examined in Chapter
+      IV, treats the syllable as efficacious independent of its ordinary
+      meaning, most purely in the case of a bīja such as hrīṃ or krīṃ. The
+      <strong>architectural register</strong>, examined in Chapters III,
+      V, and VIII, treats the syllable, or the count and arrangement of
+      syllables, as a structural echo of a larger geometric or numerical
+      pattern &mdash; the Śrī Chakra's nine āvaraṇas foremost among them.
+      The <strong>signature register</strong>, examined in Chapters VI and
+      VII, treats the syllable as a marker of identity, whether the
+      identity of a rāga or the identity of the composer himself.
+    </p>
+
+    <p>
+      No single one of these registers is unique to Dīkshitar in isolation;
+      other composers across the Indian devotional tradition have used
+      bīja mantras, other composers have signed their names into their
+      texts, and numerological correspondence appears widely in tantric
+      literature generally. What is comparatively rare, and what makes a
+      focused study of Dīkshitar worthwhile, is the consistency and density
+      with which all four registers were made to operate together, across
+      a corpus of several hundred compositions, by a composer whose own
+      initiation gave him a coherent theological reason to want them to.
+    </p>
+  </div>
+</section>
+
+</main>
+<section class="chapter" id="glossary">
+  <div class="chapter-eyebrow">Reference</div>
+  <h2 class="chapter-title">Glossary of Recurring Terms</h2>
+  <p class="chapter-title-sanskrit">शब्दकोश — a working vocabulary for this study</p>
+  <p class="chapter-lede">
+    The terms below recur throughout the preceding chapters. They are
+    gathered here in one place so that a reader need not search backward
+    through the text to recover a definition met earlier.
+  </p>
+
+  <div class="chapter-body">
+    <table class="avarana-table">
+      <thead>
+        <tr>
+          <th>Term</th>
+          <th>Devanāgarī</th>
+          <th>Working definition</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Akṣara</td>
+          <td class="sanskrit-cell">अक्षर</td>
+          <td>A syllable; also, philosophically, "the imperishable," a term chosen because a properly formed syllable was held to be indestructible in its effect.</td>
+        </tr>
+        <tr>
+          <td>Bīja / Bīja mantra</td>
+          <td class="sanskrit-cell">बीज</td>
+          <td>A single seed-syllable held to condense the sonic signature of a deity or power, functioning independently of ordinary lexical meaning.</td>
+        </tr>
+        <tr>
+          <td>Mudrā (signature)</td>
+          <td class="sanskrit-cell">मुद्रा</td>
+          <td>Here, a composer's or a rāga's name embedded within a composition's own text, distinct from the ritual hand-gesture sense of the same word.</td>
+        </tr>
+        <tr>
+          <td>Nāda</td>
+          <td class="sanskrit-cell">नाद</td>
+          <td>Sound, especially primal or causal sound, understood in several traditions as continuous with, or identical to, ultimate reality.</td>
+        </tr>
+        <tr>
+          <td>Āvaraṇa</td>
+          <td class="sanskrit-cell">आवरण</td>
+          <td>An enclosure or covering; one of the nine ritual layers of the Śrī Chakra, worshipped in sequence from the outermost square to the central bindu.</td>
+        </tr>
+        <tr>
+          <td>Bindu</td>
+          <td class="sanskrit-cell">बिन्दु</td>
+          <td>The dimensionless central point of the Śrī Chakra, representing undifferentiated union of Śiva and Śakti.</td>
+        </tr>
+        <tr>
+          <td>Kūṭa</td>
+          <td class="sanskrit-cell">कूट</td>
+          <td>A cluster; specifically, one of the three five-syllable groups composing the Pañcadaśī mantra.</td>
+        </tr>
+        <tr>
+          <td>Pañcadaśī</td>
+          <td class="sanskrit-cell">पञ्चदशी</td>
+          <td>The fifteen-syllable form of the central Śrī Vidyā mantra, arranged in three kūṭas of five syllables each.</td>
+        </tr>
+        <tr>
+          <td>Ṣoḍaśī</td>
+          <td class="sanskrit-cell">षोडशी</td>
+          <td>The sixteen-syllable extension of the Pañcadaśī, adding the bīja sauḥ, generally reserved for advanced initiates.</td>
+        </tr>
+        <tr>
+          <td>Vāggeyakāra</td>
+          <td class="sanskrit-cell">वाग्गेयकार</td>
+          <td>Literally "one who makes both the words and the music"; a composer who writes both text and melody, as distinct from a poet or a tune-setter alone.</td>
+        </tr>
+        <tr>
+          <td>Śrī Vidyā</td>
+          <td class="sanskrit-cell">श्रीविद्या</td>
+          <td>A major tantric tradition of Goddess worship centred on the Śrī Chakra and the Pañcadaśī and Ṣoḍaśī mantras.</td>
+        </tr>
+        <tr>
+          <td>Upāsanā</td>
+          <td class="sanskrit-cell">उपासना</td>
+          <td>Sustained, disciplined worship or meditative practice, as distinguished from occasional or casual devotion.</td>
+        </tr>
+        <tr>
+          <td>Mantra</td>
+          <td class="sanskrit-cell">मन्त्र</td>
+          <td>A sound-formula, of one or many syllables, held to be efficacious through structured recitation rather than through discursive comprehension alone.</td>
+        </tr>
+        <tr>
+          <td>Yantra</td>
+          <td class="sanskrit-cell">यन्त्र</td>
+          <td>A geometric diagram used as a support for worship and visualisation, understood as a visual counterpart to a mantra's sonic structure.</td>
+        </tr>
+        <tr>
+          <td>Mātṛkā</td>
+          <td class="sanskrit-cell">मातृका</td>
+          <td>The Sanskrit alphabet personified as a garland of goddesses, the source-power of articulate speech prior to its differentiation into meaningful words.</td>
+        </tr>
+        <tr>
+          <td>Sthala</td>
+          <td class="sanskrit-cell">स्थल</td>
+          <td>A specific sacred place or shrine; Dīkshitar's kritis frequently name the sthala of the deity being addressed with precise topographic detail.</td>
+        </tr>
+        <tr>
+          <td>Mūrti</td>
+          <td class="sanskrit-cell">मूर्ति</td>
+          <td>The particular consecrated form or icon of a deity at a given shrine, often distinguished from the deity's more general cosmic identity.</td>
+        </tr>
+        <tr>
+          <td>Darśana</td>
+          <td class="sanskrit-cell">दर्शन</td>
+          <td>Sacred viewing; the reciprocal act of seeing and being seen by a consecrated image, treated in this document as a visual analogue to sonic mantra.</td>
+        </tr>
+        <tr>
+          <td>Dīkṣā</td>
+          <td class="sanskrit-cell">दीक्षा</td>
+          <td>Formal initiation by a qualified guru, typically involving the transmission of a specific mantra and the assumption of an ongoing practice obligation.</td>
+        </tr>
+        <tr>
+          <td>Iṣṭadevatā</td>
+          <td class="sanskrit-cell">इष्टदेवता</td>
+          <td>A practitioner's chosen or personally assigned deity, understood as the primary focus of individual devotional practice.</td>
+        </tr>
+        <tr>
+          <td>Kaṭapayādi</td>
+          <td class="sanskrit-cell">कटपयादि</td>
+          <td>A traditional consonant-to-number encoding scheme, used elsewhere in Indian literature to embed dates or numerical constants inside verse.</td>
+        </tr>
+        <tr>
+          <td>Kṛti</td>
+          <td class="sanskrit-cell">कृति</td>
+          <td>A fixed-text devotional composition in three sections (pallavi, anupallavi, caraṇam), the primary compositional form discussed throughout this document.</td>
+        </tr>
+        <tr>
+          <td>Śabda Brahman</td>
+          <td class="sanskrit-cell">शब्दब्रह्मन्</td>
+          <td>The doctrine that the ultimate reality is itself constituted by, or identical with, the Word, prior to any particular linguistic meaning.</td>
+        </tr>
+        <tr>
+          <td>Anāhata nāda</td>
+          <td class="sanskrit-cell">अनाहत नाद</td>
+          <td>Unstruck sound; the causal, non-vibratory ground of sound prior to its differentiation into any audible, struck vibration.</td>
+        </tr>
+        <tr>
+          <td>Āhata nāda</td>
+          <td class="sanskrit-cell">आहत नाद</td>
+          <td>Struck sound; ordinary audible vibration produced by the contact of two objects, including the human voice, as distinguished from anāhata nāda.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<footer class="colophon">
+  <div class="colophon-mark">॥ गुरुगुह ॥</div>
+  <p class="colophon-text">
+    <em>Composed in the spirit of study, not performance instruction.</em>
+  </p>
+  <p class="colophon-text">
+    This document is offered as a study companion for listeners
+    approaching the Sanskrit kritis of Muthuswami Dīkshitar, drawing
+    together biographical tradition, Śrī Vidyā cosmology, and documented
+    compositional technique. Rāga and āvaraṇa attributions for individual
+    Kamalāmbā Navāvaraṇa kritis vary across published editions; readers
+    pursuing performance-level detail should cross-check the specific
+    edition or teacher's lineage they are studying from.
+  </p>
+
+  <div class="bibliography" id="bibliography-anchor">
+    <h3>Sources and Further Study</h3>
+    <ol>
+      <li>
+        Subbarāma Dīkshitar, <em>Saṅgīta Sampradāya Pradarśini</em>
+        (1904) &mdash; the foundational documentary source for the
+        Dīkshitar corpus, its notation, and family-transmitted
+        biographical detail, including the account of the Kāśī
+        initiation under Chidambaranātha Yogī.
+      </li>
+      <li>
+        T. K. Govinda Rao (compiler), <em>Compositions of Muthuswami
+        Dikshitar</em> &mdash; a widely used compiled edition of kriti
+        texts with word-for-word meanings, useful for tracing raga mudra
+        and vāggeyakāra mudra occurrences across the printed corpus.
+      </li>
+      <li>
+        Studies and commentaries on the Kamalāmbā Navāvaraṇa kritis
+        appearing in Carnatic musicological journals and performance
+        programme notes, which discuss the set's correspondence to the
+        navāvaraṇa pūjā sequence and its explicit self-naming of each
+        āvaraṇa within the sāhitya.
+      </li>
+      <li>
+        Standard Śrī Vidyā manuals and commentarial literature on the
+        Śrī Chakra, the Pañcadaśī and Ṣoḍaśī mantras, and the kūṭa
+        structure, used here for the general tantric background against
+        which Dīkshitar's technique is read.
+      </li>
+      <li>
+        Comparative material on Kashmir Śaivism's doctrine of spanda and
+        mātṛkā, referenced for the broader philosophical context of Nāda
+        Brahman and phonosemantic theory discussed in Chapters II and IX.
+      </li>
+      <li>
+        General biographical and stylistic surveys of the Carnatic
+        Trinity, consulted for the comparative material in Chapter X
+        distinguishing Dīkshitar's compositional register from that of
+        Tyāgarāja and Śyāma Śāstrī.
+      </li>
+    </ol>
+  </div>
+</footer>
+
+</div>
+
+</body>
+</html>
