@@ -1995,6 +1995,2003 @@ footer.colophon {
 </footer>
 
 </div>
+   <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Twenty Facets of Mudra — Raga Mudra and Vaggeyakara Mudra in Dikshitar's Kritis</title>
+<style>
+
+/* ============================================================
+   ROOT TOKENS — continued from the palm-leaf / temple palette
+   ============================================================ */
+
+:root {
+  --patra-tan: #E7DCB8;
+  --patra-tan-deep: #DACB9C;
+  --ink: #241C13;
+  --ink-soft: #4A3E2C;
+  --kumkum: #8C1D18;
+  --kumkum-deep: #6E1512;
+  --gold: #9C7A24;
+  --gold-bright: #B8912E;
+  --teal: #1F5C57;
+  --teal-deep: #123F3B;
+  --paper-line: rgba(36, 28, 19, 0.14);
+  --card-bg: #F1E9CE;
+  --shadow-soft: rgba(36, 28, 19, 0.18);
+  --font-display: 'Cinzel', 'Cormorant SC', serif;
+  --font-body: 'Spectral', 'Lora', Georgia, serif;
+  --font-sanskrit: 'Tiro Devanagari Sanskrit', 'Noto Serif Devanagari', serif;
+  --font-mono: 'Overpass Mono', 'Courier New', monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--patra-tan);
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      rgba(36, 28, 19, 0.02),
+      rgba(36, 28, 19, 0.02) 1px,
+      transparent 1px,
+      transparent 3px
+    );
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+.page-shell {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 44px 96px 44px;
+}
+
+/* ============================================================
+   HERO
+   ============================================================ */
+
+.hero {
+  padding: 72px 0 48px 0;
+  border-bottom: 3px double var(--gold);
+  text-align: center;
+}
+
+.hero-eyebrow {
+  font-family: var(--font-sanskrit);
+  font-size: 20px;
+  color: var(--kumkum-deep);
+  margin-bottom: 8px;
+}
+
+.hero-title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 44px;
+  line-height: 1.2;
+  color: var(--ink);
+  margin: 0 0 16px 0;
+}
+
+.hero-subtitle {
+  font-size: 19px;
+  font-style: italic;
+  color: var(--ink-soft);
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.hero-note {
+  margin-top: 24px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--teal-deep);
+}
+
+/* ============================================================
+   TAB SHELL — pure CSS, no scripted transitions or effects
+   ============================================================ */
+
+.tabs-wrap {
+  position: relative;
+  margin-top: 48px;
+}
+
+.tabs-wrap input.tab-radio {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.tab-nav {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px;
+  margin-bottom: 0;
+  border-bottom: 3px solid var(--gold);
+  padding-bottom: 16px;
+}
+
+.tab-nav label {
+  display: block;
+  cursor: pointer;
+  background: var(--card-bg);
+  border: 1px solid var(--paper-line);
+  border-radius: 2px;
+  padding: 10px 8px;
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.03em;
+  color: var(--ink-soft);
+  line-height: 1.3;
+  transition: none;
+}
+
+.tab-nav label .tab-num {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 15px;
+  color: var(--kumkum);
+  margin-bottom: 4px;
+}
+
+.tab-panel {
+  display: none;
+  padding: 40px 0 8px 0;
+}
+
+.tab-panel-inner {
+  max-width: 800px;
+}
+
+.tab-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 10px;
+}
+
+.tab-title {
+  font-family: var(--font-display);
+  font-size: 30px;
+  color: var(--ink);
+  margin: 0 0 6px 0;
+  line-height: 1.25;
+}
+
+.tab-title-sanskrit {
+  font-family: var(--font-sanskrit);
+  font-size: 19px;
+  color: var(--kumkum-deep);
+  margin: 0 0 22px 0;
+}
+
+.tab-body p {
+  margin: 0 0 18px 0;
+}
+
+.shloka-box {
+  background: var(--card-bg);
+  border: 1px solid var(--gold);
+  border-left: 5px solid var(--teal);
+  border-radius: 2px;
+  padding: 20px 24px;
+  margin: 22px 0;
+}
+
+.shloka-label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--teal-deep);
+  margin-bottom: 10px;
+}
+
+.shloka-text {
+  font-family: var(--font-sanskrit);
+  font-size: 17px;
+  color: var(--kumkum-deep);
+  margin: 0 0 8px 0;
+}
+
+.shloka-gloss {
+  font-size: 14px;
+  color: var(--ink-soft);
+  font-style: italic;
+  margin: 0;
+}
+
+.tab-note {
+  border-top: 1px solid var(--paper-line);
+  border-bottom: 1px solid var(--paper-line);
+  padding: 14px 0;
+  font-size: 14px;
+  color: var(--ink-soft);
+  margin: 22px 0;
+}
+
+.tab-note strong {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--kumkum);
+  display: block;
+  margin-bottom: 6px;
+}
+
+/* Selector logic: each radio, when checked, reveals its own
+   panel and highlights its own label. No JavaScript involved. */
+
+#tab-01:checked ~ .tab-nav label[for="tab-01"],
+#tab-02:checked ~ .tab-nav label[for="tab-02"],
+#tab-03:checked ~ .tab-nav label[for="tab-03"],
+#tab-04:checked ~ .tab-nav label[for="tab-04"],
+#tab-05:checked ~ .tab-nav label[for="tab-05"],
+#tab-06:checked ~ .tab-nav label[for="tab-06"],
+#tab-07:checked ~ .tab-nav label[for="tab-07"],
+#tab-08:checked ~ .tab-nav label[for="tab-08"],
+#tab-09:checked ~ .tab-nav label[for="tab-09"],
+#tab-10:checked ~ .tab-nav label[for="tab-10"],
+#tab-11:checked ~ .tab-nav label[for="tab-11"],
+#tab-12:checked ~ .tab-nav label[for="tab-12"],
+#tab-13:checked ~ .tab-nav label[for="tab-13"],
+#tab-14:checked ~ .tab-nav label[for="tab-14"],
+#tab-15:checked ~ .tab-nav label[for="tab-15"],
+#tab-16:checked ~ .tab-nav label[for="tab-16"],
+#tab-17:checked ~ .tab-nav label[for="tab-17"],
+#tab-18:checked ~ .tab-nav label[for="tab-18"],
+#tab-19:checked ~ .tab-nav label[for="tab-19"],
+#tab-20:checked ~ .tab-nav label[for="tab-20"] {
+  background: var(--kumkum);
+  border-color: var(--kumkum-deep);
+}
+
+#tab-01:checked ~ .tab-nav label[for="tab-01"] .tab-num,
+#tab-02:checked ~ .tab-nav label[for="tab-02"] .tab-num,
+#tab-03:checked ~ .tab-nav label[for="tab-03"] .tab-num,
+#tab-04:checked ~ .tab-nav label[for="tab-04"] .tab-num,
+#tab-05:checked ~ .tab-nav label[for="tab-05"] .tab-num,
+#tab-06:checked ~ .tab-nav label[for="tab-06"] .tab-num,
+#tab-07:checked ~ .tab-nav label[for="tab-07"] .tab-num,
+#tab-08:checked ~ .tab-nav label[for="tab-08"] .tab-num,
+#tab-09:checked ~ .tab-nav label[for="tab-09"] .tab-num,
+#tab-10:checked ~ .tab-nav label[for="tab-10"] .tab-num,
+#tab-11:checked ~ .tab-nav label[for="tab-11"] .tab-num,
+#tab-12:checked ~ .tab-nav label[for="tab-12"] .tab-num,
+#tab-13:checked ~ .tab-nav label[for="tab-13"] .tab-num,
+#tab-14:checked ~ .tab-nav label[for="tab-14"] .tab-num,
+#tab-15:checked ~ .tab-nav label[for="tab-15"] .tab-num,
+#tab-16:checked ~ .tab-nav label[for="tab-16"] .tab-num,
+#tab-17:checked ~ .tab-nav label[for="tab-17"] .tab-num,
+#tab-18:checked ~ .tab-nav label[for="tab-18"] .tab-num,
+#tab-19:checked ~ .tab-nav label[for="tab-19"] .tab-num,
+#tab-20:checked ~ .tab-nav label[for="tab-20"] .tab-num {
+  color: var(--patra-tan);
+}
+
+#tab-01:checked ~ .tab-nav label[for="tab-01"],
+#tab-02:checked ~ .tab-nav label[for="tab-02"],
+#tab-03:checked ~ .tab-nav label[for="tab-03"],
+#tab-04:checked ~ .tab-nav label[for="tab-04"],
+#tab-05:checked ~ .tab-nav label[for="tab-05"],
+#tab-06:checked ~ .tab-nav label[for="tab-06"],
+#tab-07:checked ~ .tab-nav label[for="tab-07"],
+#tab-08:checked ~ .tab-nav label[for="tab-08"],
+#tab-09:checked ~ .tab-nav label[for="tab-09"],
+#tab-10:checked ~ .tab-nav label[for="tab-10"],
+#tab-11:checked ~ .tab-nav label[for="tab-11"],
+#tab-12:checked ~ .tab-nav label[for="tab-12"],
+#tab-13:checked ~ .tab-nav label[for="tab-13"],
+#tab-14:checked ~ .tab-nav label[for="tab-14"],
+#tab-15:checked ~ .tab-nav label[for="tab-15"],
+#tab-16:checked ~ .tab-nav label[for="tab-16"],
+#tab-17:checked ~ .tab-nav label[for="tab-17"],
+#tab-18:checked ~ .tab-nav label[for="tab-18"],
+#tab-19:checked ~ .tab-nav label[for="tab-19"],
+#tab-20:checked ~ .tab-nav label[for="tab-20"] {
+  color: var(--patra-tan);
+}
+
+#tab-01:checked ~ #panel-01,
+#tab-02:checked ~ #panel-02,
+#tab-03:checked ~ #panel-03,
+#tab-04:checked ~ #panel-04,
+#tab-05:checked ~ #panel-05,
+#tab-06:checked ~ #panel-06,
+#tab-07:checked ~ #panel-07,
+#tab-08:checked ~ #panel-08,
+#tab-09:checked ~ #panel-09,
+#tab-10:checked ~ #panel-10,
+#tab-11:checked ~ #panel-11,
+#tab-12:checked ~ #panel-12,
+#tab-13:checked ~ #panel-13,
+#tab-14:checked ~ #panel-14,
+#tab-15:checked ~ #panel-15,
+#tab-16:checked ~ #panel-16,
+#tab-17:checked ~ #panel-17,
+#tab-18:checked ~ #panel-18,
+#tab-19:checked ~ #panel-19,
+#tab-20:checked ~ #panel-20 {
+  display: block;
+}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+
+footer.colophon {
+  padding: 56px 0 0 0;
+  text-align: center;
+  border-top: 3px double var(--gold);
+  margin-top: 40px;
+}
+
+.colophon-mark {
+  font-family: var(--font-sanskrit);
+  font-size: 22px;
+  color: var(--kumkum-deep);
+  margin-bottom: 12px;
+}
+
+.colophon-text {
+  max-width: 680px;
+  margin: 0 auto;
+  font-size: 14px;
+  color: var(--ink-soft);
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 860px) {
+
+  .tab-nav {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .hero-title {
+    font-size: 30px;
+  }
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  * {
+    transition: none !important;
+  }
+
+}
+
+</style>
+</head>
+<body>
+
+<div class="page-shell">
+
+<header class="hero">
+  <div class="hero-eyebrow">रागमुद्रा वाग्गेयकारमुद्रा</div>
+  <h1 class="hero-title">Twenty Facets of Mudrā</h1>
+  <p class="hero-subtitle">Rāga Mudrā and Vāggeyakāra Mudrā in the kritis of Muthuswami Dīkshitar, read as a referential record of the science of sound and vibration</p>
+  <div class="hero-note">Twenty tabs — select a number to read that facet</div>
+</header>
+
+<section style="padding: 40px 0 0 0; border-bottom: 1px solid var(--paper-line);">
+  <div style="font-family: var(--font-mono); font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); margin-bottom: 10px;">
+    Reading Guide
+  </div>
+  <h2 style="font-family: var(--font-display); font-size: 26px; color: var(--ink); margin: 0 0 20px 0;">
+    How the Twenty Facets Are Grouped
+  </h2>
+  <p style="max-width: 780px; margin: 0 0 18px 0;">
+    The twenty tabs are organised into three unrepeated groupings, each
+    approaching the underlying subject from a different angle rather than
+    restating the same ground. Facets one through ten develop rāga mudrā:
+    what it is, why it works, how it is verified, and where its evidence
+    is strong or weak. Facets eleven through seventeen develop vāggeyakāra
+    mudrā: its etymology, its chosen deity, its grammar, and its
+    comparative standing against the signature habits of Tyāgarāja and
+    Śyāma Śāstrī. Facets eighteen through twenty step back from both
+    families to the śāstric foundations that make either family of mudrā
+    meaningful in the first place, closing with a single synthesis.
+  </p>
+  <p style="max-width: 780px; margin: 0 0 18px 0;">
+    No fact established in one facet is repeated as new evidence in
+    another; where a later facet depends on an earlier one, it says so
+    directly by name rather than re-explaining the point, so that a
+    reader moving through the tabs in order encounters each idea exactly
+    once, in the place where it is first needed.
+  </p>
+  <table style="width:100%; border-collapse: collapse; margin: 8px 0 32px 0; font-size: 14px;">
+    <thead>
+      <tr>
+        <th style="background: var(--teal-deep); color: var(--patra-tan); padding: 10px 12px; text-align:left; font-family: var(--font-mono); font-weight:400; text-transform:uppercase; letter-spacing:0.05em; font-size:12px;">Group</th>
+        <th style="background: var(--teal-deep); color: var(--patra-tan); padding: 10px 12px; text-align:left; font-family: var(--font-mono); font-weight:400; text-transform:uppercase; letter-spacing:0.05em; font-size:12px;">Facets</th>
+        <th style="background: var(--teal-deep); color: var(--patra-tan); padding: 10px 12px; text-align:left; font-family: var(--font-mono); font-weight:400; text-transform:uppercase; letter-spacing:0.05em; font-size:12px;">Governing question</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="padding:10px 12px; border-bottom:1px solid var(--paper-line);">Rāga Mudrā</td>
+        <td style="padding:10px 12px; border-bottom:1px solid var(--paper-line);">01 – 10</td>
+        <td style="padding:10px 12px; border-bottom:1px solid var(--paper-line);">How does a composition name its own melodic material from within?</td>
+      </tr>
+      <tr>
+        <td style="padding:10px 12px; border-bottom:1px solid var(--paper-line); background: rgba(156,122,36,0.08);">Vāggeyakāra Mudrā</td>
+        <td style="padding:10px 12px; border-bottom:1px solid var(--paper-line); background: rgba(156,122,36,0.08);">11 – 17</td>
+        <td style="padding:10px 12px; border-bottom:1px solid var(--paper-line); background: rgba(156,122,36,0.08);">How does a composition name its own author from within?</td>
+      </tr>
+      <tr>
+        <td style="padding:10px 12px;">Foundations &amp; Synthesis</td>
+        <td style="padding:10px 12px;">18 – 20</td>
+        <td style="padding:10px 12px;">Why does either practice count as a science of sound?</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<div class="tabs-wrap">
+
+<input class="tab-radio" type="radio" name="mudra-tabs" id="tab-01" checked>
+<input class="tab-radio" type="radio" name="mudra-tabs" id="tab-02">
+<input class="tab-radio" type="radio" name="mudra-tabs" id="tab-03">
+<input class="tab-radio" type="radio" name="mudra-tabs" id="tab-04">
+<input class="tab-radio" type="radio" name="mudra-tabs" id="tab-05">
+<input class="tab-radio" type="radio" name="mudra-tabs" id="tab-06">
+<input class="tab-radio" type="radio" name="mudra-tabs" id="tab-07">
+<input class="tab-radio" type="radio" name="mudra-tabs" id="tab-08">
+<input class="tab-radio" type="radio" name="mudra-tabs" id="tab-09">
+<input class="tab-radio" type="radio" name="mudra-tabs" id="tab-10">
+<input class="tab-radio" type="radio" name="mudra-tabs" id="tab-11">
+<input class="tab-radio" type="radio" name="mudra-tabs" id="tab-12">
+<input class="tab-radio" type="radio" name="mudra-tabs" id="tab-13">
+<input class="tab-radio" type="radio" name="mudra-tabs" id="tab-14">
+<input class="tab-radio" type="radio" name="mudra-tabs" id="tab-15">
+<input class="tab-radio" type="radio" name="mudra-tabs" id="tab-16">
+<input class="tab-radio" type="radio" name="mudra-tabs" id="tab-17">
+<input class="tab-radio" type="radio" name="mudra-tabs" id="tab-18">
+<input class="tab-radio" type="radio" name="mudra-tabs" id="tab-19">
+<input class="tab-radio" type="radio" name="mudra-tabs" id="tab-20">
+
+<div class="tab-nav">
+  <label for="tab-01"><span class="tab-num">01</span>Etymology of Mudrā</label>
+  <label for="tab-02"><span class="tab-num">02</span>Two Families of Mudrā</label>
+  <label for="tab-03"><span class="tab-num">03</span>The Phonetic Overlap</label>
+  <label for="tab-04"><span class="tab-num">04</span>Case: Akshayalinga Vibho</label>
+  <label for="tab-05"><span class="tab-num">05</span>Śrī: Name and Epithet</label>
+  <label for="tab-06"><span class="tab-num">06</span>Verification in Oral Transmission</label>
+  <label for="tab-07"><span class="tab-num">07</span>Attribution Across Manuscripts</label>
+  <label for="tab-08"><span class="tab-num">08</span>Mudrā and Nāda Brahman</label>
+  <label for="tab-09"><span class="tab-num">09</span>Extent Across the Corpus</label>
+  <label for="tab-10"><span class="tab-num">10</span>Genuine Mudrā vs Coincidence</label>
+  <label for="tab-11"><span class="tab-num">11</span>Vāggeyakāra: Etymology</label>
+  <label for="tab-12"><span class="tab-num">12</span>Guruguha: Identity</label>
+  <label for="tab-13"><span class="tab-num">13</span>The Chidambaram Episode</label>
+  <label for="tab-14"><span class="tab-num">14</span>Grammatical Variants</label>
+  <label for="tab-15"><span class="tab-num">15</span>Compound Mudrās</label>
+  <label for="tab-16"><span class="tab-num">16</span>Disambiguating Family Works</label>
+  <label for="tab-17"><span class="tab-num">17</span>Signature Across the Trinity</label>
+  <label for="tab-18"><span class="tab-num">18</span>Śāstric References on Nāda</label>
+  <label for="tab-19"><span class="tab-num">19</span>Mudrā as Applied Nāda-Vijñāna</label>
+  <label for="tab-20"><span class="tab-num">20</span>Synthesis</label>
+</div>
+
+<div class="tab-panel" id="panel-01">
+<div class="tab-panel-inner">
+  <div class="tab-eyebrow">Facet 01 — Rāga Mudrā</div>
+  <h2 class="tab-title">Etymology of Mudrā</h2>
+  <p class="tab-title-sanskrit">मुद्रा — seal, signet, and the imprint that authenticates</p>
+  <div class="tab-body">
+    <p>
+      The word <em>mudrā</em> derives from a root carrying the sense of
+      sealing or stamping, and its everyday meanings span a wide field:
+      a signet ring that authenticates a royal decree, the consecrated
+      hand-gesture of temple ritual and classical dance, and, in this
+      narrower musical sense, an embedded verbal mark that authenticates
+      a composition's rāga or its composer. What unites all three senses
+      is the underlying function &mdash; a mudrā is not decoration but
+      proof. A royal seal proves a document is genuine; a hand gesture
+      in Bharatanāṭyam proves that a specific meaning, drawn from a fixed
+      vocabulary, is being communicated; a rāga mudrā proves, to a
+      listener capable of noticing it, that this piece belongs to this
+      rāga and to no other.
+    </p>
+    <p>
+      Carnatic music inherited the term from this broader semantic field
+      rather than coining it afresh, and the inheritance matters: a
+      mudrā in a kriti is not merely a clever wordplay for its own sake,
+      it is functioning, etymologically as well as practically, as a
+      seal of authenticity applied to the composition itself. This is
+      why the device recurs so insistently across the whole Carnatic
+      tradition and not only in Dīkshitar's output &mdash; every composer
+      working inside this idiom inherited a term that already meant
+      "proof of genuineness" long before it meant "a name hidden in a
+      song."
+    </p>
+    <div class="shloka-box">
+      <div class="shloka-label">Reference</div>
+      <div class="shloka-text">यथा राज्ञो मुद्रया पत्रं प्रमाणं जायते ...</div>
+      <p class="shloka-gloss">
+        A traditional teaching analogy used by commentators to explain
+        the term: just as a royal seal renders a document authoritative,
+        a composer's mudrā renders a composition traceable to its true
+        source.
+      </p>
+    </div>
+    <p>
+      Two distinct mudrā practices are examined across this set of
+      tabs: the rāga mudrā, treated in Facets 01 through 10, and the
+      vāggeyakāra mudrā, treated in Facets 11 through 17. They share a
+      root word and a sealing function but operate through different
+      mechanisms, as Facet 02 sets out directly.
+    </p>
+  </div>
+</div>
+</div>
+
+<div class="tab-panel" id="panel-02">
+<div class="tab-panel-inner">
+  <div class="tab-eyebrow">Facet 02 — Rāga Mudrā</div>
+  <h2 class="tab-title">Two Families of Mudrā</h2>
+  <p class="tab-title-sanskrit">रागमुद्रा, वाग्गेयकारमुद्रा — what each one seals</p>
+  <div class="tab-body">
+    <p>
+      A rāga mudrā seals the composition to its melodic material: it
+      names, within the sung text, the specific rāga in which the piece
+      is set. A vāggeyakāra mudrā seals the composition to its author:
+      it names, usually in a closing line, the composer or the
+      composer's chosen signature-epithet. Both are mudrās in the strict
+      sense defined in Facet 01 &mdash; both authenticate &mdash; but
+      they authenticate two different facts about the same piece.
+    </p>
+    <p>
+      The distinction matters because the two devices are frequently
+      present in the very same kriti without interfering with one
+      another, since they typically occupy different structural
+      positions: a rāga mudrā tends to surface early, often within the
+      pallavi or anupallavi, where the melodic identity of the piece is
+      being established for the listener, while a vāggeyakāra mudrā
+      characteristically closes the caraṇam, at the point where a
+      composition conventionally signs off. A single Dīkshitar kriti can
+      therefore carry two independent authentications, one melodic and
+      one authorial, without either one crowding the other.
+    </p>
+    <div class="tab-note">
+      <strong>Working rule for this study</strong>
+      Wherever this document uses the unqualified word "mudrā" without
+      further specification, context determines which of the two
+      families is meant; the two are never used interchangeably within
+      any single tab.
+    </div>
+    <p>
+      It is this dual-track authentication, more than either device
+      taken alone, that gives Dīkshitar's corpus its unusually
+      self-documenting character: a piece can often be identified by
+      rāga and by composer from its own internal evidence, without
+      recourse to an external title page or a teacher's oral
+      attribution, a property considered further in Facets 06 and 07.
+    </p>
+  </div>
+</div>
+</div>
+
+<div class="tab-panel" id="panel-03">
+<div class="tab-panel-inner">
+  <div class="tab-eyebrow">Facet 03 — Rāga Mudrā</div>
+  <h2 class="tab-title">The Phonetic Overlap Mechanism</h2>
+  <p class="tab-title-sanskrit">समानशब्द — one word, two functions</p>
+  <div class="tab-body">
+    <p>
+      Rāga mudrā depends on a specific linguistic accident: a very large
+      number of Carnatic rāga names are, independently of any musical
+      context, ordinary Sanskrit words &mdash; frequently epithets of
+      Śiva, Viṣṇu, or the Goddess, or general auspicious adjectives. A
+      composer writing a devotional sentence in Sanskrit will, quite
+      often, have entirely natural occasion to use exactly the word that
+      also happens to be the name of the rāga the sentence is set in.
+    </p>
+    <p>
+      This overlap is not something Dīkshitar invented; it is a
+      structural feature of how the Carnatic rāga-naming tradition drew
+      many of its names from the same devotional vocabulary that
+      supplies the lyrics of kritis in the first place. What Dīkshitar
+      did was notice the overlap systematically and compose toward it
+      deliberately, rather than leaving it to occur only where chance
+      supplied it. The overlap is the raw material; the mudrā is the
+      decision to use that material on purpose.
+    </p>
+    <div class="tab-note">
+      <strong>Why the device rarely feels forced</strong>
+      Because the overlapping word is already the natural, expected
+      choice on purely devotional grounds, a well-placed rāga mudrā
+      reads as ordinary praise to a listener unaware of it, and reads as
+      a signature to a listener who is aware. The device works precisely
+      because it never has to sacrifice the sentence's plain devotional
+      sense in order to also do its second job.
+    </div>
+    <p>
+      Facet 04 examines the case most frequently used to demonstrate
+      this mechanism in performance pedagogy, where the overlapping word
+      is also the name of the deity being addressed in that specific
+      kriti.
+    </p>
+  </div>
+</div>
+</div>
+
+<div class="tab-panel" id="panel-04">
+<div class="tab-panel-inner">
+  <div class="tab-eyebrow">Facet 04 — Rāga Mudrā</div>
+  <h2 class="tab-title">Case Study: Akṣayaliṅga Vibho</h2>
+  <p class="tab-title-sanskrit">अक्षयलिङ्ग विभो — Śaṅkara meets Śaṅkarābharaṇam</p>
+  <div class="tab-body">
+    <p>
+      This kriti, addressed to Śiva as Akṣayaliṅgeśvara and set in the
+      rāga Śaṅkarābharaṇam, is the example most frequently cited in
+      Carnatic pedagogy to teach the concept of rāga mudrā, precisely
+      because the overlap described in Facet 03 is so clean here: the
+      text addresses the deity as <em>Śaṅkara</em>, an entirely ordinary
+      and expected name for Śiva, which is simultaneously an exact
+      phonetic citation of the rāga's own name.
+    </p>
+    <p>
+      A listener unaware of the device hears nothing unusual &mdash;
+      only a devotional address using one of Śiva's most common epithets.
+      A listener aware of it hears the composer quietly certifying the
+      piece's own musical identity from within an act of praise, so that
+      identifying the deity and identifying the rāga become, for one
+      word, the same act of listening.
+    </p>
+    <div class="tab-note">
+      <strong>Pedagogical value</strong>
+      Teachers use this example first, before more subtle instances,
+      because both the epithet and the rāga name are widely known,
+      letting a student verify the overlap without needing to consult a
+      lexicon of less common rāga names.
+    </div>
+    <p>
+      The device generalises: wherever a rāga name coincides with a
+      standard epithet of the piece's own deity, a composer working in
+      this idiom has a ready-made, effortless opportunity for a rāga
+      mudrā, and Dīkshitar's corpus shows a marked tendency to take that
+      opportunity when it is available.
+    </p>
+  </div>
+</div>
+</div>
+
+<div class="tab-panel" id="panel-05">
+<div class="tab-panel-inner">
+  <div class="tab-eyebrow">Facet 05 — Rāga Mudrā</div>
+  <h2 class="tab-title">Śrī: Name and Epithet</h2>
+  <p class="tab-title-sanskrit">श्री — the word that is simultaneously a rāga and a goddess</p>
+  <div class="tab-body">
+    <p>
+      Few overlaps in the Carnatic naming system are as productive as
+      the word <em>Śrī</em> itself, which functions at once as the name
+      of a rāga, as an honorific prefix attached to almost any deity or
+      revered person, and as a direct name of the Goddess Lakṣmī in her
+      own right. A kriti addressed to Devī in her aspect as Śrī and set
+      in rāga Śrī achieves a rāga mudrā almost without composing toward
+      it at all, since the ordinary devotional vocabulary already
+      supplies the word on every possible occasion.
+    </p>
+    <p>
+      This particular overlap illustrates a limiting case of the
+      phenomenon described in Facet 03: because <em>śrī</em> is one of
+      the most frequently occurring words in the entire Sanskrit
+      devotional lexicon, its presence in a text set to rāga Śrī cannot,
+      by itself, be taken as strong evidence of deliberate mudrā
+      placement in the way that the rarer, more specific overlap in
+      Facet 04 can. The word's ubiquity, which makes it such a
+      convenient vehicle for a mudrā, is exactly what makes any single
+      occurrence of it comparatively weak evidence on its own.
+    </p>
+    <div class="tab-note">
+      <strong>How scholars strengthen the case</strong>
+      Where <em>śrī</em> is suspected as a deliberate rāga mudrā rather
+      than incidental devotional vocabulary, commentators look for
+      corroborating placement &mdash; the word appearing at a
+      structurally marked position such as the eḍuppu or the opening
+      syllable of the pallavi &mdash; rather than relying on the word's
+      mere presence anywhere in the text.
+    </div>
+    <p>
+      The general principle this case establishes is important for
+      everything that follows: overlap alone is necessary but not
+      sufficient evidence of intentional mudrā; structural placement, examined
+      further in Facet 10, is what turns a coincidence of vocabulary into
+      a verifiable compositional device.
+    </p>
+  </div>
+</div>
+</div>
+
+<div class="tab-panel" id="panel-06">
+<div class="tab-panel-inner">
+  <div class="tab-eyebrow">Facet 06 — Rāga Mudrā</div>
+  <h2 class="tab-title">Verification in Oral Transmission</h2>
+  <p class="tab-title-sanskrit">परम्परा — a check built into a tradition without fixed notation</p>
+  <div class="tab-body">
+    <p>
+      For most of the period in which Dīkshitar's compositions
+      circulated, Carnatic music was transmitted overwhelmingly through
+      direct guru-śiṣya instruction rather than through published
+      notation; written scores, where they existed at all, played a
+      secondary, largely archival role. In such a system, a student
+      learning a new kriti had limited independent means of confirming
+      that the rāga a teacher was demonstrating matched the rāga the
+      composer had originally intended, beyond trusting the chain of
+      transmission itself.
+    </p>
+    <p>
+      A rāga mudrā supplies exactly this missing check. If the text
+      itself names the rāga, a student, or indeed any listener with
+      enough grounding to recognise the naming convention, can confirm
+      independently that a performance is faithful to its rāga
+      identity, without needing to appeal to teacher authority alone.
+      This function is quietly practical rather than mystical: it turns
+      the composition into a self-verifying artefact inside a
+      transmission system that otherwise depended heavily on unbroken
+      oral fidelity.
+    </p>
+    <div class="tab-note">
+      <strong>A parallel from elsewhere in Indian textual culture</strong>
+      Comparable self-verification devices appear in other orally
+      transmitted Indian textual traditions, where internal
+      cross-references or embedded markers allow a text to be checked
+      against corruption without recourse to an external written
+      standard; the rāga mudrā occupies a similar functional niche
+      within the specific domain of musical transmission.
+    </div>
+    <p>
+      This practical function does not compete with the mantric and
+      authorial functions discussed elsewhere in this document; a single
+      device can serve several purposes simultaneously, and the oral
+      tradition's need for verification is one entirely sufficient
+      reason for the device to have spread as widely as it did, whatever
+      its deeper philosophical motivation may also have been.
+    </p>
+  </div>
+</div>
+</div>
+
+<div class="tab-panel" id="panel-07">
+<div class="tab-panel-inner">
+  <div class="tab-eyebrow">Facet 07 — Rāga Mudrā</div>
+  <h2 class="tab-title">Attribution Across Manuscripts</h2>
+  <p class="tab-title-sanskrit">हस्तलेख-प्रमाण — internal evidence for external disputes</p>
+  <div class="tab-body">
+    <p>
+      Beyond its use inside a single teaching lineage, the rāga mudrā
+      has served a documented scholarly function in the later,
+      text-critical study of the Carnatic repertoire: when different
+      manuscript or oral traditions disagree about which rāga a given
+      kriti was originally composed in, an internal rāga mudrā can
+      settle the question independently of any single teacher's
+      testimony, since the composer's own text supplies the answer.
+    </p>
+    <p>
+      This has practical consequences for performance practice. Where a
+      kriti has drifted, across generations of transmission, into being
+      commonly performed in a rāga slightly different from its
+      documented original &mdash; a known hazard in any long-running
+      oral tradition, since closely related rāgas can be confused
+      through gradual performance drift &mdash; a clearly embedded rāga
+      mudrā gives editors and performers a textual anchor for correction
+      that does not depend on adjudicating between competing teacher
+      lineages.
+    </p>
+    <div class="tab-note">
+      <strong>Limits of this evidence</strong>
+      A rāga mudrā settles the question only where one is actually
+      present and unambiguous; the majority of any composer's output,
+      including Dīkshitar's, does not carry an explicit rāga mudrā at
+      all, and for such pieces this particular form of internal evidence
+      is simply unavailable, leaving attribution to rest on other forms
+      of documentary and lineage-based evidence instead.
+    </div>
+    <p>
+      The existence of this function does not imply that every kriti
+      lacking a rāga mudrā is therefore uncertain in its rāga
+      attribution; it implies only that, for the subset of kritis that
+      do carry one, an additional and unusually direct form of evidence
+      is available.
+    </p>
+  </div>
+</div>
+</div>
+
+<div class="tab-panel" id="panel-08">
+<div class="tab-panel-inner">
+  <div class="tab-eyebrow">Facet 08 — Rāga Mudrā</div>
+  <h2 class="tab-title">Mudrā and Nāda Brahman</h2>
+  <p class="tab-title-sanskrit">नादब्रह्म-सम्बन्ध — naming the vessel as an act of reverence</p>
+  <div class="tab-body">
+    <p>
+      If nāda &mdash; sound itself, prior to any particular meaning
+      &mdash; is treated as continuous with ultimate reality, then a
+      rāga, understood as a specific, named organisation of that sound
+      into a scale and a characteristic melodic movement, functions as
+      one of the vessels through which nāda becomes audible and usable
+      in a given performance. On this view, naming the rāga inside a
+      composition addressed to a deity is not a separate, secular act
+      appended to devotion; it is itself a devotional act, an
+      acknowledgment of the specific vessel through which the sacred
+      sound is, in this instance, being channelled.
+    </p>
+    <p>
+      This reading connects the rāga mudrā directly to the doctrine
+      discussed at length elsewhere in this study: a composer who
+      believes sound itself to be sacred has independent theological
+      reason, beyond pedagogy or attribution, to want the rāga named
+      rather than left implicit. The naming becomes analogous to naming
+      a mantra's presiding deity before reciting it &mdash; a
+      formality that is not merely formal, because it correctly
+      identifies the specific power being invoked.
+    </p>
+    <div class="tab-note">
+      <strong>A necessary caution</strong>
+      This theological reading explains why the device would have felt
+      meaningful to a composer working inside a Nāda Brahman framework;
+      it does not, by itself, prove that every individual instance of a
+      rāga mudrā in Dīkshitar's output was consciously intended in
+      exactly these terms rather than for the more practical reasons
+      discussed in Facets 06 and 07. The three explanations are
+      complementary rather than competing.
+    </div>
+    <p>
+      What can be said with confidence is that a composer initiated into
+      Śrī Vidyā, for whom sound-as-sacred was not an abstract idea but a
+      daily practised discipline, had every reason available to treat
+      the naming of a rāga as more than a convenience, whatever the
+      practical benefits of the device may also have been.
+    </p>
+  </div>
+</div>
+</div>
+
+<div class="tab-panel" id="panel-09">
+<div class="tab-panel-inner">
+  <div class="tab-eyebrow">Facet 09 — Rāga Mudrā</div>
+  <h2 class="tab-title">Extent Across the Corpus</h2>
+  <p class="tab-title-sanskrit">विस्तार — how widespread is the device, honestly stated</p>
+  <div class="tab-body">
+    <p>
+      Dīkshitar's surviving output is generally reckoned at somewhere
+      around four hundred and fifty kritis, though the exact count
+      varies slightly across cataloguing efforts depending on how
+      fragmentary or disputed pieces are treated. Systematic surveys
+      attempting to count how many of these carry a verifiable rāga
+      mudrā have been undertaken by several generations of
+      musicologists, and the resulting figures differ according to how
+      strictly "verifiable" is defined.
+    </p>
+    <p>
+      A strict count requires the rāga name to appear as an unambiguous,
+      grammatically load-bearing word doing genuine sentence-work,
+      rather than a loose phonetic echo that could be explained away as
+      coincidence. A looser count includes near-homophones and partial
+      matches. Under either standard, however, conservative published
+      estimates place the practice among the most extensive uses of this
+      specific device by any composer whose work survives in comparably
+      large quantity within the tradition's documented history.
+    </p>
+    <div class="tab-note">
+      <strong>Why an exact percentage is not given here</strong>
+      Because different scholarly surveys apply different criteria and
+      have not converged on a single agreed figure, this document
+      deliberately avoids quoting a specific percentage as though it
+      were a settled statistic. The safer and better supported claim is
+      comparative: the practice is unusually extensive in Dīkshitar's
+      output relative to his contemporaries, not that it occurs in an
+      exact, universally agreed fraction of his kritis.
+    </div>
+    <p>
+      This kind of caution is itself part of treating the subject
+      matter responsibly: a study built on syllable-level precision
+      loses credibility if it overstates precision at the level of
+      corpus-wide statistics that remain genuinely contested among
+      specialists.
+    </p>
+  </div>
+</div>
+</div>
+
+<div class="tab-panel" id="panel-10">
+<div class="tab-panel-inner">
+  <div class="tab-eyebrow">Facet 10 — Rāga Mudrā</div>
+  <h2 class="tab-title">Genuine Mudrā versus Coincidence</h2>
+  <p class="tab-title-sanskrit">सत्यमुद्रा, आकस्मिकशब्द — telling design from accident</p>
+  <div class="tab-body">
+    <p>
+      Because so many rāga names overlap with ordinary devotional
+      vocabulary, as established in Facets 03 and 05, the mere presence
+      of a rāga's name somewhere in a kriti's text cannot, by itself,
+      prove deliberate placement. A rigorous approach needs criteria for
+      separating a genuine mudrā from an accidental occurrence of the
+      same sound-string.
+    </p>
+    <p>
+      Three criteria are generally applied together, none sufficient
+      alone. First, structural position: a genuine mudrā tends to occupy
+      a prominent location &mdash; the opening of the pallavi, the
+      eḍuppu, or a cadential phrase &mdash; rather than appearing
+      buried in the middle of an unrelated clause. Second, grammatical
+      necessity: a genuine mudrā uses the word in a natural, unforced
+      sentence role, neither straining the syntax to accommodate it nor
+      requiring an unusual reading to make it fit. Third, consistency
+      across the corpus: a technique that recurs reliably across many
+      pieces addressed to the same broad category of deity is better
+      evidence of authorial habit than a single isolated instance.
+    </p>
+    <div class="tab-note">
+      <strong>Applying the criteria together</strong>
+      The Akṣayaliṅga Vibho case examined in Facet 04 satisfies all
+      three criteria at once: prominent placement, effortless grammar,
+      and a pattern repeated elsewhere in the corpus. Weaker candidates,
+      such as isolated occurrences of a common word like <em>śrī</em>
+      discussed in Facet 05, satisfy the criteria only partially and are
+      treated with correspondingly less confidence.
+    </div>
+    <p>
+      This same three-part test, adapted appropriately, will recur when
+      Facet 15 turns to compound vāggeyakāra mudrās, since the underlying
+      problem &mdash; distinguishing intentional pattern from incidental
+      word choice &mdash; is common to both families of mudrā.
+    </p>
+  </div>
+</div>
+</div>
+
+<div class="tab-panel" id="panel-11">
+<div class="tab-panel-inner">
+  <div class="tab-eyebrow">Facet 11 — Vāggeyakāra Mudrā</div>
+  <h2 class="tab-title">Vāggeyakāra: Etymology</h2>
+  <p class="tab-title-sanskrit">वाक् + गेय + कार — the maker of both word and melody</p>
+  <div class="tab-body">
+    <p>
+      The term <em>vāggeyakāra</em> is a compound of three elements:
+      <em>vāk</em>, speech or word; <em>geya</em>, that which is to be
+      sung, i.e. melody; and <em>kāra</em>, maker or doer. A
+      vāggeyakāra, strictly, is one who composes both the text and the
+      music of a piece, as distinguished from a poet whose verses are
+      later set to music by someone else, or a musician who sets
+      pre-existing verses without authoring them. The term is a
+      credential as much as a description: it certifies unified
+      authorship of both layers of a composition.
+    </p>
+    <p>
+      All three members of the Carnatic Trinity are conventionally
+      described as vāggeyakāras precisely because each composed both
+      text and tune together as a single creative act, rather than
+      working across a division of labour between poet and musician.
+      The vāggeyakāra mudrā, then, is not simply a composer's name; it
+      is the signature of someone claiming this specific, unified
+      authorial role, distinguishing the practice from simple textual
+      attribution as found in purely literary compositions.
+    </p>
+    <div class="tab-note">
+      <strong>Distinct from the rāga mudrā</strong>
+      Where a rāga mudrā certifies a fact about the music alone (which
+      rāga), a vāggeyakāra mudrā certifies a fact about the whole
+      creative act (who made both the words and the tune). The two
+      mudrā families, reviewed together in Facet 02, remain
+      conceptually distinct even where they appear in the same piece.
+    </div>
+    <p>
+      Facet 12 turns to the specific name Dīkshitar chose for this
+      signature, which is neither his given name nor a generic
+      authorial marker but the name of a particular deity.
+    </p>
+  </div>
+</div>
+</div>
+
+<div class="tab-panel" id="panel-12">
+<div class="tab-panel-inner">
+  <div class="tab-eyebrow">Facet 12 — Vāggeyakāra Mudrā</div>
+  <h2 class="tab-title">Guruguha: Identity of the Signing Deity</h2>
+  <p class="tab-title-sanskrit">गुरुगुह — the hidden guru, the guru who is himself a cave</p>
+  <div class="tab-body">
+    <p>
+      Almost every one of Dīkshitar's kritis closes with some form of
+      the name <em>Guruguha</em>, an epithet of Skanda-Subrahmaṇya. The
+      name itself admits more than one traditional gloss: read as
+      <em>guru</em> plus <em>guha</em> (cave), it can mean "the guru who
+      dwells in the cave (of the heart)," an image consistent with
+      Skanda's association, in several regional traditions, with
+      esoteric and hidden knowledge transmitted directly rather than
+      through ordinary discursive instruction. Guha is also, separately,
+      one of Skanda's own proper names, so the compound can equally be
+      read as "Guha who is guru."
+    </p>
+    <p>
+      Rāmasvāmi Dīkshitar, the composer's father and himself a musician,
+      is described in family tradition as having undertaken worship at
+      a shrine of this deity in order to be blessed with a son, a detail
+      already introduced earlier in this study; the signature is
+      therefore not a generic devotional flourish but a specific,
+      repeated acknowledgment of the deity to whom the composer's own
+      existence was, according to family tradition, owed.
+    </p>
+    <div class="shloka-box">
+      <div class="shloka-label">Traditional epithet, as used in signature lines</div>
+      <div class="shloka-text">गुरुगुहमूर्ते, गुरुगुहरत्नम्, गुरुगुहाय नमः</div>
+      <p class="shloka-gloss">
+        Representative inflected forms of the signature as it appears
+        across different grammatical contexts within closing caraṇam
+        lines; the specific ending varies with the sentence's case
+        requirements, discussed further in Facet 14.
+      </p>
+    </div>
+    <p>
+      Facet 13 turns to the specific narrative episode that gives
+      Guruguha his standing as "guru" in the first place, since the
+      title is not a generic honorific but refers to a particular,
+      well-known account of Skanda instructing Śiva himself.
+    </p>
+  </div>
+</div>
+</div>
+
+<div class="tab-panel" id="panel-13">
+<div class="tab-panel-inner">
+  <div class="tab-eyebrow">Facet 13 — Vāggeyakāra Mudrā</div>
+  <h2 class="tab-title">The Chidambaram Episode</h2>
+  <p class="tab-title-sanskrit">प्रणवोपदेश — the son who taught the meaning of Oṃ to his own father</p>
+  <div class="tab-body">
+    <p>
+      A well-known account, preserved across several regional Purāṇic
+      and hagiographic traditions of Skanda-worship, holds that Śiva
+      himself, at Chidambaram, was once unable to fully explain the
+      meaning of the praṇava (the syllable Oṃ) and turned to his own son
+      Skanda for instruction, who is said to have expounded it to him.
+      This inversion of the ordinary parent-teaches-child relationship is
+      precisely what earns Skanda the title <em>Svāminātha</em> (lord
+      even of one's own teacher) in some traditions, and it is the same
+      narrative logic that supports the epithet Guruguha: a guru who
+      instructs even those who would ordinarily be his own teachers.
+    </p>
+    <p>
+      The episode is directly relevant to this study's larger argument
+      because its subject matter is precisely the topic of Chapter II:
+      the praṇava is the paradigm case of a single syllable held to
+      contain, in condensed form, the entirety of a cosmological
+      teaching. A composer who signs every kriti under the name of the
+      deity credited with correctly transmitting the meaning of exactly
+      this syllable is signing, in effect, under the deity most closely
+      associated in his own tradition with syllable-level sacred
+      instruction &mdash; a fitting patron for a composer whose own
+      technique treats syllables as bearers of concentrated meaning.
+    </p>
+    <div class="tab-note">
+      <strong>A note on regional variation</strong>
+      Details of this narrative vary somewhat across different regional
+      and sectarian retellings, and this document presents the episode
+      as the traditional account underlying the Guruguha epithet rather
+      than as a single, textually fixed original source; readers seeking
+      the specific textual origin should consult the relevant Purāṇic
+      and Skanda-worship literature directly.
+    </div>
+    <p>
+      Whatever its precise textual origin, the episode was clearly
+      current and meaningful within the devotional culture Dīkshitar
+      inherited, since it is this same narrative logic that later
+      commentators invoke to explain why the signature Guruguha was such
+      a fitting choice for a composer working so consistently with
+      syllable and sound.
+    </p>
+  </div>
+</div>
+</div>
+
+<div class="tab-panel" id="panel-14">
+<div class="tab-panel-inner">
+  <div class="tab-eyebrow">Facet 14 — Vāggeyakāra Mudrā</div>
+  <h2 class="tab-title">Grammatical Variants of the Signature</h2>
+  <p class="tab-title-sanskrit">विभक्ति-परिवर्तन — one name, several case-endings</p>
+  <div class="tab-body">
+    <p>
+      Sanskrit's case system means a proper name changes its ending
+      depending on its grammatical role in a sentence, and Dīkshitar's
+      signature line adapts accordingly rather than appearing as a
+      single frozen phrase. Depending on whether the closing line
+      addresses Guruguha directly, describes him as an agent, or refers
+      to him possessively, the corpus shows forms such as a vocative
+      address, an instrumental construction describing something done
+      "by Guruguha," and possessive compounds naming something as
+      belonging to or characteristic of him.
+    </p>
+    <p>
+      This grammatical flexibility is worth noting for a specific
+      reason: it demonstrates that the signature is genuinely integrated
+      into the sentence structure of the caraṇam rather than appended
+      as an unassimilated tag. A composer could, in principle, have
+      simply stapled an unvarying signature word onto the end of every
+      piece regardless of grammatical context; instead, the name is
+      declined correctly according to ordinary Sanskrit grammar in each
+      instance, indicating that the signature was composed as an
+      integral part of the sentence, not bolted on afterward.
+    </p>
+    <div class="tab-note">
+      <strong>Practical use in cataloguing</strong>
+      Musicologists compiling the Dīkshitar corpus rely on recognising
+      these variant forms, rather than searching only for one fixed
+      spelling, when attempting to identify authentic Dīkshitar
+      compositions within manuscripts of mixed or uncertain attribution.
+    </div>
+    <p>
+      Facet 15 extends this discussion to cases where the Guruguha
+      signature is combined with additional words naming a specific
+      shrine or a specific form of the deity being praised, producing
+      compound signatures unique to individual kritis.
+    </p>
+  </div>
+</div>
+</div>
+
+<div class="tab-panel" id="panel-15">
+<div class="tab-panel-inner">
+  <div class="tab-eyebrow">Facet 15 — Vāggeyakāra Mudrā</div>
+  <h2 class="tab-title">Compound Mudrās</h2>
+  <p class="tab-title-sanskrit">संयुक्तमुद्रा — the signature fused with the shrine</p>
+  <div class="tab-body">
+    <p>
+      In a number of kritis, the base signature Guruguha is extended
+      into a compound that also names the specific deity, shrine, or
+      local form being praised in that particular piece, producing a
+      signature unique to that composition rather than a generic
+      recurring tag. This practice fuses the authorial function of the
+      vāggeyakāra mudrā with the descriptive, place-naming character
+      that is otherwise typical of Dīkshitar's sāhitya more broadly,
+      folding two of the composer's characteristic habits into a single
+      closing phrase.
+    </p>
+    <p>
+      Applying the three-part test set out in Facet 10 &mdash;
+      structural position, grammatical necessity, and cross-corpus
+      consistency &mdash; to these compound forms, the base element
+      Guruguha satisfies all three criteria overwhelmingly, given its
+      presence in the vast majority of the surviving corpus, while the
+      compounded, shrine-specific portion of any individual signature is
+      naturally unique to that piece and does not recur, since its
+      function is precisely to particularise rather than to repeat.
+    </p>
+    <div class="tab-note">
+      <strong>Reading a compound signature</strong>
+      When encountering a caraṇam closing with a compound built on
+      Guruguha, a useful reading habit is to separate the invariant
+      element, which performs the authorial function discussed in this
+      chapter, from the variable element, which typically performs the
+      same descriptive, shrine-naming function found throughout the rest
+      of the piece.
+    </div>
+    <p>
+      Facet 16 turns to a closely related, more practically consequential
+      use of these signature variations: their role in distinguishing
+      Dīkshitar's own compositions from those of close family members
+      working in a related idiom.
+    </p>
+  </div>
+</div>
+</div>
+
+<div class="tab-panel" id="panel-16">
+<div class="tab-panel-inner">
+  <div class="tab-eyebrow">Facet 16 — Vāggeyakāra Mudrā</div>
+  <h2 class="tab-title">Disambiguating Family Compositions</h2>
+  <p class="tab-title-sanskrit">कुटुम्ब-भेद — telling brothers apart by their seal</p>
+  <div class="tab-body">
+    <p>
+      Muthuswami Dīkshitar's brothers, Bāluswāmi Dīkshitar and
+      Chinnaswāmi Dīkshitar, were themselves musicians working in a
+      closely related stylistic idiom, and later compilers of the
+      family's combined musical output have needed reliable methods for
+      distinguishing authentic Muthuswami compositions from works by
+      other family members or by later composers writing in a
+      consciously Dīkshitar-influenced style. The vāggeyakāra mudrā is
+      one of the primary tools available for this task, since it
+      supplies internal, textual evidence of authorship that does not
+      depend solely on external attribution by a teacher or a
+      manuscript's title.
+    </p>
+    <p>
+      This cataloguing use connects directly back to the etymological
+      point made in Facet 01: a mudrā is, at root, a seal that proves
+      genuineness, and disambiguating family authorship is precisely the
+      kind of proof-of-origin problem the device was, in its broadest
+      sense, always suited to solve, whether the context is a royal
+      decree, a hand gesture with a fixed meaning, or a closing line of
+      Sanskrit verse.
+    </p>
+    <div class="tab-note">
+      <strong>A caution about consistency</strong>
+      Signature evidence is strongest when combined with corroborating
+      stylistic and documentary evidence, since a formulaic signature
+      could, in principle, be imitated by a later composer deliberately
+      writing in homage to the original; careful cataloguing therefore
+      treats the mudrā as strong supporting evidence rather than as
+      proof sufficient entirely on its own.
+    </div>
+    <p>
+      With the internal mechanics of both mudrā families now covered,
+      Facet 17 steps back to place Dīkshitar's signature practice
+      alongside the very different signature habits of his two
+      counterparts in the Trinity.
+    </p>
+  </div>
+</div>
+</div>
+
+<div class="tab-panel" id="panel-17">
+<div class="tab-panel-inner">
+  <div class="tab-eyebrow">Facet 17 — Vāggeyakāra Mudrā</div>
+  <h2 class="tab-title">Signature Across the Trinity</h2>
+  <p class="tab-title-sanskrit">त्रयीमुद्रा — three composers, three chosen names</p>
+  <div class="tab-body">
+    <p>
+      All three members of the Carnatic Trinity practised vāggeyakāra
+      mudrā, but the name each one chose to sign with reveals a
+      distinct relationship between composer and deity. Tyāgarāja signs
+      overwhelmingly as <em>Tyāgarāja</em> or in forms such as
+      <em>Tyāgarājanuta</em> ("praised by Tyāgarāja") &mdash; his own
+      given name, doubling as an epithet meaning roughly "lord who
+      protects through renunciation," a name that was, according to
+      family and hagiographic tradition, itself already bound up with
+      Rāma-bhakti from birth. Śyāma Śāstrī signs as
+      <em>Śyāmakṛṣṇa</em>, a name directly identifying the composer with
+      Kṛṣṇa while also functioning as his personal name, again
+      collapsing composer-identity and deity-identity into a single
+      word.
+    </p>
+    <p>
+      Dīkshitar's practice, examined across Facets 11 through 16, differs
+      from both in one specific respect: his signature is neither his own
+      given name nor a name that straightforwardly doubles as his
+      personal identity. Guruguha is, unambiguously, someone else's
+      name &mdash; the deity his father worshipped for his birth. Where
+      Tyāgarāja and Śyāma Śāstrī sign in a manner that merges composer
+      and deity into a single verbal identity, Dīkshitar signs in a
+      manner that keeps composer and deity visibly distinct: the
+      composer names his patron and benefactor, rather than folding
+      himself into the deity's own name.
+    </p>
+    <div class="tab-note">
+      <strong>What this difference suggests</strong>
+      This distinction is consistent with the broader contrast drawn in
+      the comparative discussion elsewhere in this study: Tyāgarāja's
+      idiom is personal and confessional even at the level of signature,
+      while Dīkshitar's idiom, oriented toward cosmological precision
+      rather than personal narrative, signs in a manner that
+      acknowledges a specific lineage of debt &mdash; to Guruguha, and
+      through him to the account of sacred sound-transmission discussed
+      in Facet 13 &mdash; rather than asserting a personal identity fused
+      with the divine.
+    </div>
+    <p>
+      Neither approach to signature is more devout than the other; they
+      simply encode two different, internally coherent understandings of
+      what a composer's relationship to his chosen deity consists of.
+    </p>
+  </div>
+</div>
+</div>
+
+<div class="tab-panel" id="panel-18">
+<div class="tab-panel-inner">
+  <div class="tab-eyebrow">Facet 18 — Foundations</div>
+  <h2 class="tab-title">Śāstric References on Nāda</h2>
+  <p class="tab-title-sanskrit">शास्त्रप्रमाण — where the doctrine of sound as reality is textually anchored</p>
+  <div class="tab-body">
+    <p>
+      The claim that sound precedes and constitutes reality is not a
+      musicological invention but a textually anchored doctrine with
+      roots reaching back through Upaniṣadic and later tantric
+      literature. The Māṇḍūkya Upaniṣad's treatment of the single
+      syllable Oṃ as encompassing past, present, and future, and indeed
+      whatever lies beyond the three times, is the foundational
+      statement of the idea that one syllable can be coextensive with
+      the whole of reality &mdash; the doctrinal seed from which the
+      mantric techniques discussed across Chapters IV and VIII of the
+      companion volume ultimately grow.
+    </p>
+    <div class="shloka-box">
+      <div class="shloka-label">Māṇḍūkya Upaniṣad, opening verse (paraphrased sense)</div>
+      <div class="shloka-text">ओमित्येतदक्षरमिदं सर्वं तस्योपव्याख्यानम् ...</div>
+      <p class="shloka-gloss">
+        The syllable Oṃ is declared to be this entire universe, with
+        what follows offered as its further explanation &mdash; the
+        clearest classical statement of a single akṣara treated as
+        coextensive with the whole of manifest reality.
+      </p>
+    </div>
+    <p>
+      Later tantric literature associated with Kashmir Śaivism develops
+      this seed doctrine considerably further through the concept of
+      <em>spanda</em>, the primal vibratory pulse said to underlie
+      consciousness itself, and through <em>mātṛkā</em> theory, in which
+      the entire Sanskrit alphabet is understood as a garland of
+      goddesses constituting the creative power of speech prior to its
+      differentiation into particular words, discussed at length in
+      Chapter IX of the companion volume. Śrī Vidyā inherits and
+      systematises strands of both traditions, giving its central
+      mantras &mdash; the Pañcadaśī and Ṣoḍaśī discussed in Chapter VIII
+      &mdash; their characteristic kūṭa-based, syllable-counted
+      structure.
+    </p>
+    <div class="tab-note">
+      <strong>Why this textual lineage matters for a study of mudrā</strong>
+      Both mudrā families examined in this document &mdash; rāga mudrā
+      and vāggeyakāra mudrā &mdash; are, at bottom, practices of
+      embedding a specific, meaningful akṣara-sequence inside a larger
+      composition. That practice only carries the weight this study
+      claims for it if the surrounding culture already held syllables
+      capable of carrying exactly this kind of concentrated significance
+      independent of ordinary discursive meaning &mdash; which is
+      precisely what this textual lineage, from the Māṇḍūkya Upaniṣad
+      through Kashmir Śaivism to Śrī Vidyā, establishes.
+    </div>
+    <p>
+      A composer initiated into this lineage, as Chapter I of the
+      companion volume describes Dīkshitar to have been, inherits not
+      merely a set of techniques but a textually supported reason to
+      believe those techniques do real work &mdash; which is the
+      argument Facet 19 develops directly under the heading of applied
+      sound-science.
+    </p>
+  </div>
+</div>
+</div>
+
+<div class="tab-panel" id="panel-19">
+<div class="tab-panel-inner">
+  <div class="tab-eyebrow">Facet 19 — Foundations</div>
+  <h2 class="tab-title">Mudrā as Applied Nāda-Vijñāna</h2>
+  <p class="tab-title-sanskrit">नादविज्ञान — sound treated as a subject of exact knowledge, not only feeling</p>
+  <div class="tab-body">
+    <p>
+      The word <em>vijñāna</em> denotes discriminative, exact knowledge
+      &mdash; the kind of knowing that distinguishes correctly between
+      things, as opposed to <em>jñāna</em>'s broader sense of knowledge
+      or realisation in general. To describe Dīkshitar's mudrā practice
+      as an instance of applied <em>nāda-vijñāna</em>, sound-science, is
+      to make a specific claim: that his handling of syllables treats
+      sound as a domain in which precise, discriminating distinctions
+      matter, in the way a science distinguishes correctly between
+      adjacent cases, rather than treating sound only as raw material
+      for general emotional expression.
+    </p>
+    <p>
+      Both mudrā families examined across this set of tabs display
+      exactly this discriminating precision. A rāga mudrā depends on
+      the composer correctly distinguishing which specific rāga a piece
+      belongs to and finding the one word capable of naming that rāga
+      without disturbing the sentence's ordinary sense &mdash; a
+      problem with a right answer and countless wrong ones, not a matter
+      of general impression. A vāggeyakāra mudrā depends on correctly
+      declining a proper name according to the grammatical role it
+      plays in a specific sentence, as Facet 14 detailed, again a
+      problem with a determinate correct solution rather than an
+      approximate one.
+    </p>
+
+    <table style="width:100%; border-collapse: collapse; margin: 26px 0; font-size: 14px;">
+      <thead>
+        <tr>
+          <th style="background: var(--teal-deep); color: var(--patra-tan); padding: 10px 12px; text-align:left; font-family: var(--font-mono); font-weight:400; text-transform:uppercase; letter-spacing:0.05em; font-size:12px;">Dimension</th>
+          <th style="background: var(--teal-deep); color: var(--patra-tan); padding: 10px 12px; text-align:left; font-family: var(--font-mono); font-weight:400; text-transform:uppercase; letter-spacing:0.05em; font-size:12px;">Rāga Mudrā</th>
+          <th style="background: var(--teal-deep); color: var(--patra-tan); padding: 10px 12px; text-align:left; font-family: var(--font-mono); font-weight:400; text-transform:uppercase; letter-spacing:0.05em; font-size:12px;">Vāggeyakāra Mudrā</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="padding:10px 12px; border-bottom:1px solid var(--paper-line);">What is authenticated</td>
+          <td style="padding:10px 12px; border-bottom:1px solid var(--paper-line);">The melodic identity of the piece</td>
+          <td style="padding:10px 12px; border-bottom:1px solid var(--paper-line);">The authorial identity behind the piece</td>
+        </tr>
+        <tr>
+          <td style="padding:10px 12px; border-bottom:1px solid var(--paper-line); background: rgba(156,122,36,0.08);">Typical position</td>
+          <td style="padding:10px 12px; border-bottom:1px solid var(--paper-line); background: rgba(156,122,36,0.08);">Pallavi or anupallavi, near the eḍuppu</td>
+          <td style="padding:10px 12px; border-bottom:1px solid var(--paper-line); background: rgba(156,122,36,0.08);">Closing lines of the caraṇam</td>
+        </tr>
+        <tr>
+          <td style="padding:10px 12px; border-bottom:1px solid var(--paper-line);">Grammatical mechanism</td>
+          <td style="padding:10px 12px; border-bottom:1px solid var(--paper-line);">Phonetic overlap between rāga name and ordinary word (Facet 03)</td>
+          <td style="padding:10px 12px; border-bottom:1px solid var(--paper-line);">Correct case-inflection of a proper name (Facet 14)</td>
+        </tr>
+        <tr>
+          <td style="padding:10px 12px; border-bottom:1px solid var(--paper-line); background: rgba(156,122,36,0.08);">Practical function</td>
+          <td style="padding:10px 12px; border-bottom:1px solid var(--paper-line); background: rgba(156,122,36,0.08);">Verification within oral transmission (Facet 06)</td>
+          <td style="padding:10px 12px; border-bottom:1px solid var(--paper-line); background: rgba(156,122,36,0.08);">Disambiguation of family authorship (Facet 16)</td>
+        </tr>
+        <tr>
+          <td style="padding:10px 12px;">Theological grounding</td>
+          <td style="padding:10px 12px;">Naming the vessel of nāda as an act of reverence (Facet 08)</td>
+          <td style="padding:10px 12px;">Acknowledging the deity of sacred sound-transmission (Facet 13)</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>
+      Read together, the table shows two techniques that differ in
+      mechanism and in the specific fact each one certifies, while
+      sharing an underlying commitment: both require the composer to
+      know something about sound with enough precision to embed a
+      correct, verifiable answer inside an otherwise ordinary devotional
+      sentence. That combination &mdash; devotional surface, verifiable
+      technical substrate &mdash; is exactly what justifies describing
+      the whole practice as applied sound-science rather than simply as
+      poetic ornamentation.
+    </p>
+    <div class="tab-note">
+      <strong>Distinguishing applied science from mysticism</strong>
+      Calling this practice a science does not mean claiming it operates
+      through mechanisms verifiable by instruments external to the
+      tradition itself; it means that, on its own terms, the practice
+      involves discriminating, checkable correctness &mdash; a right
+      rāga, a right case-ending, a right bīja in a right position &mdash;
+      rather than free-floating impressionistic association. That
+      internal rigor is what the word vijñāna is doing in this heading.
+    </div>
+    <p>
+      Facet 20 closes this set of tabs by drawing the threads of both
+      mudrā families back into the single claim that has organised the
+      whole discussion: a mudrā, in Dīkshitar's hands, is evidence of
+      sound-science, not decoration applied on top of it.
+    </p>
+  </div>
+</div>
+</div>
+
+<div class="tab-panel" id="panel-20">
+<div class="tab-panel-inner">
+  <div class="tab-eyebrow">Facet 20 — Synthesis</div>
+  <h2 class="tab-title">Reading a Mudrā as an Act of Vijñāna</h2>
+  <p class="tab-title-sanskrit">उपसंहार — closing the circle from etymology to evidence</p>
+  <div class="tab-body">
+    <p>
+      This set of twenty tabs opened, in Facet 01, with the etymology of
+      <em>mudrā</em> as a seal &mdash; a mark whose entire purpose is to
+      authenticate rather than to decorate. Every facet since has, in
+      one way or another, tested that opening claim against a specific
+      piece of evidence: a case study, a mechanism, a practical use in
+      cataloguing, a theological grounding, a comparison against the
+      signature habits of Dīkshitar's two counterparts in the Trinity.
+      None of that evidence has required abandoning the opening claim.
+      If anything, the cumulative weight of ten facets on rāga mudrā and
+      seven on vāggeyakāra mudrā strengthens it: a device this
+      consistently structured, this reliably positioned, and this
+      widely attested across independent scholarly surveys is not
+      plausibly read as incidental wordplay.
+    </p>
+
+    <p>
+      It is worth restating, without repeating the detailed arguments
+      already made, the two things this synthesis does <em>not</em>
+      claim. It does not claim that every occurrence of a rāga name or
+      of the word Guruguha in Dīkshitar's texts is proof of deliberate
+      design; Facets 05 and 10 were explicit that overlap alone is weak
+      evidence, and that structural placement, grammatical necessity,
+      and cross-corpus consistency are the criteria that separate
+      genuine mudrā from coincidence. Nor does it claim that a precise,
+      agreed statistic exists for how much of the corpus carries a
+      verifiable rāga mudrā; Facet 09 was explicit that published
+      estimates vary by methodology and that this document reports the
+      comparative picture rather than inventing a false precision.
+    </p>
+
+    <h3 style="font-family: var(--font-display); font-size: 22px; color: var(--teal-deep); margin: 36px 0 14px 0;">Why "science of sound" is the right frame</h3>
+
+    <p>
+      The phrase used throughout this document, <em>nāda-vijñāna</em>,
+      sound-science, was defined precisely in Facet 19: not a claim of
+      externally instrumented verification, but a claim of internal,
+      discriminating correctness. A composer choosing a rāga mudrā must
+      get the rāga right; a composer inflecting a vāggeyakāra signature
+      must get the grammar right; a composer embedding a bīja, as the
+      companion volume's Chapter IV describes, must place it correctly
+      relative to the mantra it echoes. Each of these is a determinate
+      problem with a correct and multiple incorrect solutions, which is
+      the essential mark separating a discipline that treats its
+      material with exact attention from one that treats the same
+      material only impressionistically.
+    </p>
+
+    <div class="shloka-box">
+      <div class="shloka-label">Closing reference</div>
+      <div class="shloka-text">नादानुसन्धानम् समाधिसिद्धिकरम् ...</div>
+      <p class="shloka-gloss">
+        A traditional formulation, echoed across several yoga and Nāda
+        Brahman-adjacent texts, holding that sustained, disciplined
+        attention to sound (nādānusandhāna) is itself a path toward
+        absorption and accomplishment &mdash; a fitting closing thought
+        for a study whose entire argument has been that Dīkshitar
+        treated the composition of a kriti as exactly this kind of
+        sustained, disciplined attention to sound, carried out at the
+        level of the individual syllable.
+      </p>
+    </div>
+
+    <h3 style="font-family: var(--font-display); font-size: 22px; color: var(--teal-deep); margin: 36px 0 14px 0;">The twenty facets, in one table</h3>
+
+    <table style="width:100%; border-collapse: collapse; margin: 20px 0 34px 0; font-size: 13.5px;">
+      <thead>
+        <tr>
+          <th style="background: var(--teal-deep); color: var(--patra-tan); padding: 9px 11px; text-align:left; font-family: var(--font-mono); font-weight:400; text-transform:uppercase; letter-spacing:0.05em; font-size:11px;">#</th>
+          <th style="background: var(--teal-deep); color: var(--patra-tan); padding: 9px 11px; text-align:left; font-family: var(--font-mono); font-weight:400; text-transform:uppercase; letter-spacing:0.05em; font-size:11px;">Facet</th>
+          <th style="background: var(--teal-deep); color: var(--patra-tan); padding: 9px 11px; text-align:left; font-family: var(--font-mono); font-weight:400; text-transform:uppercase; letter-spacing:0.05em; font-size:11px;">Core takeaway</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="padding:9px 11px; border-bottom:1px solid var(--paper-line);">01</td>
+          <td style="padding:9px 11px; border-bottom:1px solid var(--paper-line);">Etymology of Mudrā</td>
+          <td style="padding:9px 11px; border-bottom:1px solid var(--paper-line);">A mudrā authenticates; it does not merely decorate.</td>
+        </tr>
+        <tr>
+          <td style="padding:9px 11px; border-bottom:1px solid var(--paper-line); background: rgba(156,122,36,0.08);">02</td>
+          <td style="padding:9px 11px; border-bottom:1px solid var(--paper-line); background: rgba(156,122,36,0.08);">Two Families of Mudrā</td>
+          <td style="padding:9px 11px; border-bottom:1px solid var(--paper-line); background: rgba(156,122,36,0.08);">Rāga mudrā seals the music; vāggeyakāra mudrā seals the author.</td>
+        </tr>
+        <tr>
+          <td style="padding:9px 11px; border-bottom:1px solid var(--paper-line);">03</td>
+          <td style="padding:9px 11px; border-bottom:1px solid var(--paper-line);">The Phonetic Overlap</td>
+          <td style="padding:9px 11px; border-bottom:1px solid var(--paper-line);">Rāga names often double as devotional epithets, enabling the device.</td>
+        </tr>
+        <tr>
+          <td style="padding:9px 11px; border-bottom:1px solid var(--paper-line); background: rgba(156,122,36,0.08);">04</td>
+          <td style="padding:9px 11px; border-bottom:1px solid var(--paper-line); background: rgba(156,122,36,0.08);">Case: Akṣayaliṅga Vibho</td>
+          <td style="padding:9px 11px; border-bottom:1px solid var(--paper-line); background: rgba(156,122,36,0.08);">Śaṅkara/Śaṅkarābharaṇam is the clearest textbook instance.</td>
+        </tr>
+        <tr>
+          <td style="padding:9px 11px; border-bottom:1px solid var(--paper-line);">05</td>
+          <td style="padding:9px 11px; border-bottom:1px solid var(--paper-line);">Śrī: Name and Epithet</td>
+          <td style="padding:9px 11px; border-bottom:1px solid var(--paper-line);">Ubiquitous words make weak, uncorroborated evidence on their own.</td>
+        </tr>
+        <tr>
+          <td style="padding:9px 11px; border-bottom:1px solid var(--paper-line); background: rgba(156,122,36,0.08);">06</td>
+          <td style="padding:9px 11px; border-bottom:1px solid var(--paper-line); background: rgba(156,122,36,0.08);">Verification in Oral Transmission</td>
+          <td style="padding:9px 11px; border-bottom:1px solid var(--paper-line); background: rgba(156,122,36,0.08);">The mudrā lets a rāga be checked without relying on teacher authority alone.</td>
+        </tr>
+        <tr>
+          <td style="padding:9px 11px; border-bottom:1px solid var(--paper-line);">07</td>
+          <td style="padding:9px 11px; border-bottom:1px solid var(--paper-line);">Attribution Across Manuscripts</td>
+          <td style="padding:9px 11px; border-bottom:1px solid var(--paper-line);">Internal evidence can settle disputed rāga attributions.</td>
+        </tr>
+        <tr>
+          <td style="padding:9px 11px; border-bottom:1px solid var(--paper-line); background: rgba(156,122,36,0.08);">08</td>
+          <td style="padding:9px 11px; border-bottom:1px solid var(--paper-line); background: rgba(156,122,36,0.08);">Mudrā and Nāda Brahman</td>
+          <td style="padding:9px 11px; border-bottom:1px solid var(--paper-line); background: rgba(156,122,36,0.08);">Naming the rāga can be read as reverence for the vessel of sacred sound.</td>
+        </tr>
+        <tr>
+          <td style="padding:9px 11px; border-bottom:1px solid var(--paper-line);">09</td>
+          <td style="padding:9px 11px; border-bottom:1px solid var(--paper-line);">Extent Across the Corpus</td>
+          <td style="padding:9px 11px; border-bottom:1px solid var(--paper-line);">Extensive by comparative estimate; no single agreed percentage exists.</td>
+        </tr>
+        <tr>
+          <td style="padding:9px 11px; border-bottom:1px solid var(--paper-line); background: rgba(156,122,36,0.08);">10</td>
+          <td style="padding:9px 11px; border-bottom:1px solid var(--paper-line); background: rgba(156,122,36,0.08);">Genuine Mudrā vs Coincidence</td>
+          <td style="padding:9px 11px; border-bottom:1px solid var(--paper-line); background: rgba(156,122,36,0.08);">Position, grammar, and consistency together distinguish design from accident.</td>
+        </tr>
+        <tr>
+          <td style="padding:9px 11px; border-bottom:1px solid var(--paper-line);">11</td>
+          <td style="padding:9px 11px; border-bottom:1px solid var(--paper-line);">Vāggeyakāra: Etymology</td>
+          <td style="padding:9px 11px; border-bottom:1px solid var(--paper-line);">The term certifies unified authorship of both text and melody.</td>
+        </tr>
+        <tr>
+          <td style="padding:9px 11px; border-bottom:1px solid var(--paper-line); background: rgba(156,122,36,0.08);">12</td>
+          <td style="padding:9px 11px; border-bottom:1px solid var(--paper-line); background: rgba(156,122,36,0.08);">Guruguha: Identity</td>
+          <td style="padding:9px 11px; border-bottom:1px solid var(--paper-line); background: rgba(156,122,36,0.08);">The signature names the deity of the composer's own family devotion.</td>
+        </tr>
+        <tr>
+          <td style="padding:9px 11px; border-bottom:1px solid var(--paper-line);">13</td>
+          <td style="padding:9px 11px; border-bottom:1px solid var(--paper-line);">The Chidambaram Episode</td>
+          <td style="padding:9px 11px; border-bottom:1px solid var(--paper-line);">Guruguha is traditionally linked to transmitting the praṇava's meaning.</td>
+        </tr>
+        <tr>
+          <td style="padding:9px 11px; border-bottom:1px solid var(--paper-line); background: rgba(156,122,36,0.08);">14</td>
+          <td style="padding:9px 11px; border-bottom:1px solid var(--paper-line); background: rgba(156,122,36,0.08);">Grammatical Variants</td>
+          <td style="padding:9px 11px; border-bottom:1px solid var(--paper-line); background: rgba(156,122,36,0.08);">The signature is grammatically integrated, not appended as a fixed tag.</td>
+        </tr>
+        <tr>
+          <td style="padding:9px 11px; border-bottom:1px solid var(--paper-line);">15</td>
+          <td style="padding:9px 11px; border-bottom:1px solid var(--paper-line);">Compound Mudrās</td>
+          <td style="padding:9px 11px; border-bottom:1px solid var(--paper-line);">Guruguha can fuse with shrine-specific language unique to one kriti.</td>
+        </tr>
+        <tr>
+          <td style="padding:9px 11px; border-bottom:1px solid var(--paper-line); background: rgba(156,122,36,0.08);">16</td>
+          <td style="padding:9px 11px; border-bottom:1px solid var(--paper-line); background: rgba(156,122,36,0.08);">Disambiguating Family Works</td>
+          <td style="padding:9px 11px; border-bottom:1px solid var(--paper-line); background: rgba(156,122,36,0.08);">The mudrā helps separate Muthuswami's work from his brothers'.</td>
+        </tr>
+        <tr>
+          <td style="padding:9px 11px; border-bottom:1px solid var(--paper-line);">17</td>
+          <td style="padding:9px 11px; border-bottom:1px solid var(--paper-line);">Signature Across the Trinity</td>
+          <td style="padding:9px 11px; border-bottom:1px solid var(--paper-line);">Dīkshitar's signature names a patron rather than fusing with his own identity.</td>
+        </tr>
+        <tr>
+          <td style="padding:9px 11px; border-bottom:1px solid var(--paper-line); background: rgba(156,122,36,0.08);">18</td>
+          <td style="padding:9px 11px; border-bottom:1px solid var(--paper-line); background: rgba(156,122,36,0.08);">Śāstric References on Nāda</td>
+          <td style="padding:9px 11px; border-bottom:1px solid var(--paper-line); background: rgba(156,122,36,0.08);">The doctrine of sound-as-reality is textually anchored, not invented for music.</td>
+        </tr>
+        <tr>
+          <td style="padding:9px 11px; border-bottom:1px solid var(--paper-line);">19</td>
+          <td style="padding:9px 11px; border-bottom:1px solid var(--paper-line);">Mudrā as Applied Nāda-Vijñāna</td>
+          <td style="padding:9px 11px; border-bottom:1px solid var(--paper-line);">Both mudrā families require discriminating, checkable correctness.</td>
+        </tr>
+        <tr>
+          <td style="padding:9px 11px;">20</td>
+          <td style="padding:9px 11px;">Synthesis</td>
+          <td style="padding:9px 11px;">A mudrā is evidence of sound-science, not ornament placed upon it.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>
+      Read end to end, these twenty facets are not twenty separate
+      claims but one claim examined from twenty angles: that for a
+      composer formed by the initiation described in the companion
+      volume's first chapter, embedding a rāga's name or a deity's name
+      inside a devotional sentence was never merely clever wordplay. It
+      was a small, repeatable act of precision performed on the material
+      the composer's own tradition had already told him was sacred
+      &mdash; and it is exactly that repeated precision, tab after tab,
+      kriti after kriti, that constitutes the referential record this
+      study set out to make legible.
+    </p>
+  </div>
+</div>
+</div>
+
+</div>
+
+<section style="padding: 44px 0 0 0; border-top: 1px solid var(--paper-line);">
+  <div style="font-family: var(--font-mono); font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); margin-bottom: 10px;">
+    Reference
+  </div>
+  <h2 style="font-family: var(--font-display); font-size: 26px; color: var(--ink); margin: 0 0 20px 0;">
+    Structural Terms Used Across the Twenty Facets
+  </h2>
+  <p style="max-width: 780px; margin: 0 0 22px 0;">
+    The facets above assume familiarity with the three-part architecture
+    of a Carnatic kṛti. The terms below are gathered here, separately from
+    the Sanskrit philosophical vocabulary already glossed in the
+    companion volume, so that the structural discussion of mudrā
+    placement in Facets 02, 06, and 10 can be followed without
+    interruption.
+  </p>
+  <table style="width:100%; border-collapse: collapse; margin: 8px 0 12px 0; font-size: 14px;">
+    <thead>
+      <tr>
+        <th style="background: var(--teal-deep); color: var(--patra-tan); padding: 10px 12px; text-align:left; font-family: var(--font-mono); font-weight:400; text-transform:uppercase; letter-spacing:0.05em; font-size:12px;">Term</th>
+        <th style="background: var(--teal-deep); color: var(--patra-tan); padding: 10px 12px; text-align:left; font-family: var(--font-mono); font-weight:400; text-transform:uppercase; letter-spacing:0.05em; font-size:12px;">Structural role</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="padding:10px 12px; border-bottom:1px solid var(--paper-line);">Pallavi</td>
+        <td style="padding:10px 12px; border-bottom:1px solid var(--paper-line);">The opening section of a kṛti, typically one or two lines, stated and returned to as a refrain; a favoured site for rāga mudrā placement.</td>
+      </tr>
+      <tr>
+        <td style="padding:10px 12px; border-bottom:1px solid var(--paper-line); background: rgba(156,122,36,0.08);">Anupallavi</td>
+        <td style="padding:10px 12px; border-bottom:1px solid var(--paper-line); background: rgba(156,122,36,0.08);">The second section, extending the pallavi's material and often introducing higher melodic register; another common site for rāga mudrā.</td>
+      </tr>
+      <tr>
+        <td style="padding:10px 12px; border-bottom:1px solid var(--paper-line);">Caraṇam</td>
+        <td style="padding:10px 12px; border-bottom:1px solid var(--paper-line);">The concluding section, often the longest, and the conventional location for a vāggeyakāra mudrā's closing signature line.</td>
+      </tr>
+      <tr>
+        <td style="padding:10px 12px; border-bottom:1px solid var(--paper-line); background: rgba(156,122,36,0.08);">Eḍuppu</td>
+        <td style="padding:10px 12px; border-bottom:1px solid var(--paper-line); background: rgba(156,122,36,0.08);">The point, relative to the tāla cycle, at which a melodic line begins; a structurally marked position frequently carrying mudrā weight.</td>
+      </tr>
+      <tr>
+        <td style="padding:10px 12px; border-bottom:1px solid var(--paper-line);">Tāla</td>
+        <td style="padding:10px 12px; border-bottom:1px solid var(--paper-line);">The rhythmic cycle governing a composition's metric structure, against which the eḍuppu is measured.</td>
+      </tr>
+      <tr>
+        <td style="padding:10px 12px; border-bottom:1px solid var(--paper-line); background: rgba(156,122,36,0.08);">Sāhitya</td>
+        <td style="padding:10px 12px; border-bottom:1px solid var(--paper-line); background: rgba(156,122,36,0.08);">The sung text of a composition, as distinct from its melodic setting; the layer in which both mudrā families are embedded.</td>
+      </tr>
+      <tr>
+        <td style="padding:10px 12px; border-bottom:1px solid var(--paper-line);">Sampradāya</td>
+        <td style="padding:10px 12px; border-bottom:1px solid var(--paper-line);">A lineage of transmitted teaching and practice; used in Facet 07 in connection with manuscript and oral variation across editions.</td>
+      </tr>
+      <tr>
+        <td style="padding:10px 12px; background: rgba(156,122,36,0.08);">Guru-śiṣya paramparā</td>
+        <td style="padding:10px 12px; background: rgba(156,122,36,0.08);">The teacher-to-student chain of oral transmission discussed in Facet 06 as the context in which rāga mudrā serves a verification function.</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<section style="padding: 44px 0 0 0; border-top: 1px solid var(--paper-line);">
+  <div style="font-family: var(--font-mono); font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); margin-bottom: 10px;">
+    Reference
+  </div>
+  <h2 style="font-family: var(--font-display); font-size: 26px; color: var(--ink); margin: 0 0 20px 0;">
+    Named Kritis, Deities, and Figures
+  </h2>
+  <p style="max-width: 780px; margin: 0 0 22px 0;">
+    For readers wishing to locate a specific proper name quickly, the
+    principal named compositions, deities, and historical figures
+    discussed across the twenty facets are indexed below by the facet in
+    which each is first introduced.
+  </p>
+  <table style="width:100%; border-collapse: collapse; margin: 8px 0 12px 0; font-size: 14px;">
+    <thead>
+      <tr>
+        <th style="background: var(--teal-deep); color: var(--patra-tan); padding: 10px 12px; text-align:left; font-family: var(--font-mono); font-weight:400; text-transform:uppercase; letter-spacing:0.05em; font-size:12px;">Name</th>
+        <th style="background: var(--teal-deep); color: var(--patra-tan); padding: 10px 12px; text-align:left; font-family: var(--font-mono); font-weight:400; text-transform:uppercase; letter-spacing:0.05em; font-size:12px;">Identity</th>
+        <th style="background: var(--teal-deep); color: var(--patra-tan); padding: 10px 12px; text-align:left; font-family: var(--font-mono); font-weight:400; text-transform:uppercase; letter-spacing:0.05em; font-size:12px;">First discussed</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="padding:10px 12px; border-bottom:1px solid var(--paper-line);">Akṣayaliṅga Vibho</td>
+        <td style="padding:10px 12px; border-bottom:1px solid var(--paper-line);">Kṛti to Śiva as Akṣayaliṅgeśvara, rāga Śaṅkarābharaṇam</td>
+        <td style="padding:10px 12px; border-bottom:1px solid var(--paper-line);">Facet 04</td>
+      </tr>
+      <tr>
+        <td style="padding:10px 12px; border-bottom:1px solid var(--paper-line); background: rgba(156,122,36,0.08);">Guruguha</td>
+        <td style="padding:10px 12px; border-bottom:1px solid var(--paper-line); background: rgba(156,122,36,0.08);">Epithet of Skanda-Subrahmaṇya; Dīkshitar's vāggeyakāra mudrā</td>
+        <td style="padding:10px 12px; border-bottom:1px solid var(--paper-line); background: rgba(156,122,36,0.08);">Facet 12</td>
+      </tr>
+      <tr>
+        <td style="padding:10px 12px; border-bottom:1px solid var(--paper-line);">Rāmasvāmi Dīkshitar</td>
+        <td style="padding:10px 12px; border-bottom:1px solid var(--paper-line);">Composer's father, worshipped Guruguha for a son</td>
+        <td style="padding:10px 12px; border-bottom:1px solid var(--paper-line);">Facet 12</td>
+      </tr>
+      <tr>
+        <td style="padding:10px 12px; border-bottom:1px solid var(--paper-line); background: rgba(156,122,36,0.08);">Bāluswāmi Dīkshitar</td>
+        <td style="padding:10px 12px; border-bottom:1px solid var(--paper-line); background: rgba(156,122,36,0.08);">Composer's brother; family-authorship disambiguation</td>
+        <td style="padding:10px 12px; border-bottom:1px solid var(--paper-line); background: rgba(156,122,36,0.08);">Facet 16</td>
+      </tr>
+      <tr>
+        <td style="padding:10px 12px; border-bottom:1px solid var(--paper-line);">Chinnaswāmi Dīkshitar</td>
+        <td style="padding:10px 12px; border-bottom:1px solid var(--paper-line);">Composer's brother; family-authorship disambiguation</td>
+        <td style="padding:10px 12px; border-bottom:1px solid var(--paper-line);">Facet 16</td>
+      </tr>
+      <tr>
+        <td style="padding:10px 12px; border-bottom:1px solid var(--paper-line); background: rgba(156,122,36,0.08);">Tyāgarāja</td>
+        <td style="padding:10px 12px; border-bottom:1px solid var(--paper-line); background: rgba(156,122,36,0.08);">Comparative signature practice: "Tyāgarāja" / "Tyāgarājanuta"</td>
+        <td style="padding:10px 12px; border-bottom:1px solid var(--paper-line); background: rgba(156,122,36,0.08);">Facet 17</td>
+      </tr>
+      <tr>
+        <td style="padding:10px 12px;">Śyāma Śāstrī</td>
+        <td style="padding:10px 12px;">Comparative signature practice: "Śyāmakṛṣṇa"</td>
+        <td style="padding:10px 12px;">Facet 17</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<section style="padding: 44px 0 0 0; border-top: 1px solid var(--paper-line);">
+  <div style="font-family: var(--font-mono); font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); margin-bottom: 10px;">
+    Cross-Reference
+  </div>
+  <h2 style="font-family: var(--font-display); font-size: 26px; color: var(--ink); margin: 0 0 20px 0;">
+    Relation to the Companion Volume's Chapters VI and VII
+  </h2>
+  <p style="max-width: 780px; margin: 0 0 18px 0;">
+    Readers who have already worked through the companion volume's
+    overview chapters on rāga mudrā and vāggeyakāra mudrā will recognise
+    this document as an expansion rather than a restatement: the
+    companion volume's Chapter VI introduced rāga mudrā in roughly four
+    paragraphs and one case study, while Facets 01 through 10 here
+    unfold the same underlying technique into its etymology, its two
+    surrounding mechanisms, its evidentiary standards, its practical
+    uses, and its theological grounding, without repeating any single
+    sentence of the original chapter.
+  </p>
+  <p style="max-width: 780px; margin: 0 0 18px 0;">
+    The same relationship holds for vāggeyakāra mudrā: the companion
+    volume's Chapter VII established the fact of the Guruguha signature
+    and its connection to the composer's father; Facets 11 through 17
+    here extend that single fact outward into etymology, narrative
+    background, grammar, compound forms, cataloguing use, and
+    comparative context across the Trinity, treating the original
+    chapter as a foundation to build on rather than a summary to repeat.
+  </p>
+  <p style="max-width: 780px; margin: 0;">
+    A reader new to the subject can begin with either document; a reader
+    who has read both will find that the two consistently reinforce
+    rather than duplicate one another, since each new fact introduced
+    here builds specifically on a point the shorter chapters left
+    undeveloped.
+  </p>
+</section>
+
+<footer class="colophon">
+  <div class="colophon-mark">॥ नादब्रह्मार्पणमस्तु ॥</div>
+  <p class="colophon-text">
+    A reference companion, not a performance manual. Each tab develops a
+    distinct facet of the same underlying claim: that a mudra in
+    Dikshitar's hands is a record of sound-science, not an ornament placed
+    on top of it.
+  </p>
+
+  <div style="max-width: 620px; margin: 32px auto 0 auto; background: var(--card-bg); border: 1px solid var(--gold); border-left: 5px solid var(--kumkum); border-radius: 2px; padding: 20px 26px; text-align: left;">
+    <div style="font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--kumkum); margin-bottom: 10px;">
+      Dedication
+    </div>
+    <div style="font-family: var(--font-sanskrit); font-size: 17px; color: var(--kumkum-deep); margin: 0 0 8px 0;">
+      गुरुगुहाय नमः, नादब्रह्मणे नमः
+    </div>
+    <p style="font-size: 14px; color: var(--ink-soft); font-style: italic; margin: 0;">
+      Salutations to Guruguha; salutations to sound understood as
+      Brahman &mdash; offered here in the same spirit in which the
+      composer under study offered his own closing lines, tab after
+      tab, kriti after kriti.
+    </p>
+  </div>
+
+  <div style="max-width: 780px; margin: 40px auto 0 auto; text-align: left; padding-top: 28px; border-top: 1px solid var(--paper-line);">
+    <h3 style="font-family: var(--font-display); font-size: 20px; color: var(--teal-deep); text-align: center; margin-bottom: 20px;">
+      Sources and Further Study
+    </h3>
+    <ol style="font-size: 14px; color: var(--ink-soft); padding-left: 22px;">
+      <li style="margin-bottom: 12px;">
+        Subbarāma Dīkshitar, <em>Saṅgīta Sampradāya Pradarśini</em> (1904)
+        &mdash; the foundational documentary source for the Dīkshitar
+        corpus, its notation, and the family-transmitted account of the
+        Guruguha signature and its Chidambaram-episode background.
+      </li>
+      <li style="margin-bottom: 12px;">
+        T. K. Govinda Rao (compiler), <em>Compositions of Muthuswami
+        Dikshitar</em> &mdash; a widely used compiled edition of kriti
+        texts with word-for-word meanings, useful for independently
+        verifying rāga mudrā and vāggeyakāra mudrā placements referenced
+        across Facets 04, 05, and 12 through 16.
+      </li>
+      <li style="margin-bottom: 12px;">
+        Māṇḍūkya Upaniṣad, for the foundational statement of a single
+        akṣara treated as coextensive with the whole of reality,
+        referenced in Facet 18.
+      </li>
+      <li style="margin-bottom: 12px;">
+        Comparative material on Kashmir Śaivism's doctrine of spanda and
+        mātṛkā, and on Śrī Vidyā's Pañcadaśī and Ṣoḍaśī mantra structure,
+        consulted for the śāstric background of Facets 08, 13, 18, and 19.
+      </li>
+      <li style="margin-bottom: 12px;">
+        General biographical and stylistic surveys of the Carnatic
+        Trinity, consulted for the comparative signature material in
+        Facet 17 distinguishing Dīkshitar's vāggeyakāra mudrā from that
+        of Tyāgarāja and Śyāma Śāstrī.
+      </li>
+      <li style="margin-bottom: 12px;">
+        Musicological cataloguing studies of the Dīkshitar corpus,
+        consulted for the discussion of rāga mudrā frequency estimates in
+        Facet 09 and of family-authorship disambiguation in Facet 16.
+      </li>
+    </ol>
+  </div>
+
+  <div style="max-width: 780px; margin: 36px auto 0 auto; text-align: left; padding-top: 24px; border-top: 1px solid var(--paper-line);">
+    <h3 style="font-family: var(--font-display); font-size: 20px; color: var(--teal-deep); text-align: center; margin-bottom: 18px;">
+      A Note on Scope
+    </h3>
+    <p style="font-size: 14px; color: var(--ink-soft); margin: 0 0 14px 0;">
+      This document treats rāga mudrā and vāggeyakāra mudrā as a single,
+      related pair of techniques within a larger sound-oriented
+      compositional grammar; it does not re-cover the bīja akṣara,
+      Kamalāmbā Navāvaraṇa, akṣara-numerology, or phonosemantic material
+      already developed in the companion volume, since repeating that
+      ground here would duplicate rather than extend the existing study.
+      Readers seeking the fuller cosmological context &mdash; the Śrī
+      Chakra's nine āvaraṇas, the bīja grid, and the Pañcadaśī and Ṣoḍaśī
+      mantra structures &mdash; should consult that companion document
+      directly.
+    </p>
+    <p style="font-size: 14px; color: var(--ink-soft); margin: 0;">
+      Where rāga and āvaraṇa attributions for individual kritis are
+      contested across published editions, this document follows the
+      same cautious convention established in the companion volume:
+      structural claims well attested across independent sources are
+      stated with confidence, while single-edition specifics are flagged
+      as such rather than presented as uncontested fact.
+    </p>
+  </div>
+
+  <div style="max-width: 780px; margin: 36px auto 0 auto; text-align: left; padding-top: 24px; border-top: 1px solid var(--paper-line);">
+    <h3 style="font-family: var(--font-display); font-size: 20px; color: var(--teal-deep); text-align: center; margin-bottom: 18px;">
+      A Note on the Tab Format
+    </h3>
+    <p style="font-size: 14px; color: var(--ink-soft); margin: 0 0 14px 0;">
+      The twenty facets above switch using plain radio inputs and CSS
+      sibling selectors, with no JavaScript, no animated transition, and
+      no loading state of any kind between one facet and the next. The
+      choice is deliberate rather than a limitation: a study organised
+      around the claim that precision matters more than ornamentation is
+      better served by an interface that behaves the same way, showing
+      each facet's full content the instant it is selected rather than
+      easing, fading, or sliding into view.
+    </p>
+    <p style="font-size: 14px; color: var(--ink-soft); margin: 0 0 14px 0;">
+      This also means the document degrades gracefully: with styling
+      disabled entirely, every one of the twenty facets remains present
+      in the underlying markup and readable in document order, since
+      nothing about the content depends on the tab mechanism to exist,
+      only on the tab mechanism to be conveniently browsed one facet at
+      a time.
+    </p>
+    <p style="font-size: 14px; color: var(--ink-soft); margin: 0;">
+      Selecting a numbered label reveals that facet's panel and
+      simultaneously returns the previous panel to its hidden state;
+      no facet's content is duplicated in the markup to achieve this,
+      and no facet depends on another being open at the same time, so
+      any of the twenty can be read first without loss of context.
+    </p>
+  </div>
+
+  <div style="max-width: 780px; margin: 36px auto 0 auto; text-align: left; padding-top: 24px; border-top: 1px solid var(--paper-line);">
+    <h3 style="font-family: var(--font-display); font-size: 20px; color: var(--teal-deep); text-align: center; margin-bottom: 18px;">
+      Two Questions Readers Often Ask Next
+    </h3>
+    <p style="font-size: 14px; color: var(--ink-soft); margin: 0 0 14px 0;">
+      <strong style="color: var(--kumkum); font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.05em; text-transform: uppercase;">Does every kṛti carry both mudrā families at once?</strong><br>
+      No. Facet 09 was explicit that even the more extensively documented
+      rāga mudrā appears in only a substantial, not universal, portion of
+      the corpus; the vāggeyakāra mudrā is considerably more consistent,
+      appearing in nearly all surviving pieces, but "nearly all" is not
+      "all," and a small number of compositions carry incomplete or
+      disputed attribution for exactly this reason.
+    </p>
+    <p style="font-size: 14px; color: var(--ink-soft); margin: 0;">
+      <strong style="color: var(--kumkum); font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.05em; text-transform: uppercase;">Can a listener without Sanskrit still notice these devices?</strong><br>
+      Partially. The vāggeyakāra mudrā is the more accessible of the two,
+      since the recurring word Guruguha stands out audibly at the close
+      of a caraṇam even to a listener with no Sanskrit training. The rāga
+      mudrā is harder to notice without at least a working knowledge of
+      rāga names and basic Sanskrit vocabulary, since its entire
+      mechanism depends on recognising an overlap between two things a
+      listener must already be able to name separately.
+    </p>
+  </div>
+
+  <p style="max-width: 620px; margin: 32px auto 0 auto; font-size: 13px; color: var(--ink-soft); font-style: italic;">
+    Twenty facets, two mudrā families, one continuing claim: that sound,
+    for this composer, was never merely a medium for other content but a
+    subject of study in its own right, worthy of the same precision he
+    brought to every syllable he set to music.
+  </p>
+
+  <div style="max-width: 620px; margin: 28px auto 0 auto; padding-top: 18px; border-top: 1px solid var(--paper-line); font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--teal-deep);">
+    Companion reference · Twenty Facets of Mudrā · Rāga Mudrā and Vāggeyakāra Mudrā
+  </div>
+
+  <div style="max-width: 620px; margin: 14px auto 0 auto; font-family: var(--font-sanskrit); font-size: 15px; color: var(--kumkum-deep);">
+    इति रागमुद्रा-वाग्गेयकारमुद्रा-विवरणम् सम्पूर्णम्
+  </div>
+
+  <p style="max-width: 620px; margin: 18px auto 0 auto; font-size: 12px; color: var(--ink-soft);">
+    Thus concludes this account of rāga mudrā and vāggeyakāra mudrā.
+  </p>
+
+  <p style="max-width: 620px; margin: 10px auto 0 auto; font-size: 12px; color: var(--ink-soft);">
+    ॥ शुभम् ॥
+  </p>
+
+
+</footer>
+
+</div>
 
 </body>
 </html>
